@@ -18,7 +18,7 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}
         >
-          <img src="/images/logo.png" alt="Samalex Solutions Logo" style={{ height: '50px', objectFit: 'contain' }} />
+          <img src="/images/logo.jpg" alt="Samalex Solutions Logo" style={{ height: '50px', objectFit: 'contain' }} />
           <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: '1.5rem', fontWeight: 'bold' }}>
             Samalex Solutions
           </span>
