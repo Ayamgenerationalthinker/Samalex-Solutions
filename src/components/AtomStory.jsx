@@ -1,188 +1,146 @@
 'use client';
 
-import { useRef, useState, useEffect } from 'react';
-import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const steps = [
-  { id: '01', title: 'Registration', desc: 'Residents begin the process by registering for the Affordable Toilet Ownership Model.', images: ['/images/atom-registration.jpeg'] },
-  { id: '02', title: 'Inspection', desc: 'Our team assesses the site and identifies the most suitable sanitation solution.', images: ['/images/atom-inspection.jpeg'] },
-  { id: '03', title: 'Construction', desc: 'The sanitation facility is professionally constructed and installed.', images: [
-    '/images/atom-construction.jpeg', 
-    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
-    'https://images.unsplash.com/photo-1541888087525-2bf54dea9b72?auto=format&fit=crop&w=800&q=80'
-  ] },
-  { id: '04', title: 'Education & Handover', desc: 'Users receive training on proper usage, hygiene practices, and maintenance.', images: ['/images/atom-handover.jpeg'] },
-  { id: '05', title: 'Payment', desc: 'Flexible payment options support sustainable toilet ownership.', images: ['/images/atom-payment.jpeg'] },
-  { id: '06', title: 'Joy In Toilet', desc: 'Families enjoy a clean, safe, and dignified sanitation experience.', images: ['/images/atom-success.jpeg'] }
+  { id: '01', title: 'Registration', desc: 'Residents begin the process by registering for the Affordable Toilet Ownership Model.', image: '/images/atom-registration.jpeg' },
+  { id: '02', title: 'Inspection', desc: 'Our team assesses the site and identifies the most suitable sanitation solution.', image: '/images/atom-inspection.jpeg' },
+  { id: '03', title: 'Construction', desc: 'The sanitation facility is professionally constructed and installed.', image: '/images/atom-construction.jpeg' },
+  { id: '04', title: 'Education & Handover', desc: 'Users receive training on proper usage, hygiene practices, and maintenance.', image: '/images/atom-handover.jpeg' },
+  { id: '05', title: 'Payment', desc: 'Flexible payment options support sustainable toilet ownership.', image: '/images/atom-payment.jpeg' },
+  { id: '06', title: 'Joy In Toilet', desc: 'Families enjoy a clean, safe, and dignified sanitation experience.', image: '/images/atom-success.jpeg' }
 ];
 
-const MultiImagePlayer = ({ images, isActive }) => {
-  const [idx, setIdx] = useState(0);
-
-  useEffect(() => {
-    if (!isActive || images.length <= 1) return;
-    const interval = setInterval(() => {
-      setIdx((prev) => (prev + 1) % images.length);
-    }, 2500);
-    return () => clearInterval(interval);
-  }, [isActive, images.length]);
-
-  return (
-    <AnimatePresence mode="popLayout">
-      <motion.div
-        key={idx}
-        initial={{ opacity: 0, scale: 1.05 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0 }}
-        transition={{ duration: 1.2, ease: 'easeInOut' }}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', backgroundColor: 'var(--primary-green)' }} // Fallback background color
-      >
-        <Image 
-          src={images[idx]} 
-          alt="ATOM Story Step"
-          fill
-          style={{ objectFit: 'cover' }}
-          sizes="(max-width: 768px) 100vw, 50vw"
-        />
-      </motion.div>
-    </AnimatePresence>
-  );
-};
-
 export default function AtomStory() {
-  const containerRef = useRef(null);
-  const { scrollYProgress } = useScroll({ target: containerRef, offset: ["start start", "end end"] });
-  const totalSteps = steps.length;
+  const [activeStep, setActiveStep] = useState(0);
+
+  // Auto-play the steps
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveStep((prev) => (prev + 1) % steps.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section ref={containerRef} style={{ backgroundColor: '#071013', color: 'var(--white)', position: 'relative' }}>
-      <div style={{ height: `${totalSteps * 100 + 100}vh`, width: '100%' }}>
-        <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+    <section id="solutions" className="section-padding" style={{ backgroundColor: '#071013', color: 'var(--white)' }}>
+      <div className="container">
+        
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <motion.h2 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--accent-green)', fontFamily: 'Sora', marginBottom: '1rem' }}
+          >
+            How the Affordable Toilet Ownership Model Works
+          </motion.h2>
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{ fontSize: '1.125rem', color: '#8892b0', maxWidth: '600px', margin: '0 auto' }}
+          >
+            A simple process designed to bring safe sanitation closer to every household.
+          </motion.p>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
           
-          <div className="container" style={{ display: 'flex', width: '100%', height: '100%', position: 'relative', zIndex: 10 }}>
-            
-            {/* LEFT TEXT */}
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingRight: '2rem', zIndex: 20 }}>
-              <motion.div 
+          {/* Left Side: Steps List */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            {steps.map((step, index) => (
+              <div 
+                key={step.id} 
+                onClick={() => setActiveStep(index)}
                 style={{ 
-                  position: 'absolute', top: '25%', left: '2rem', right: '50%',
-                  opacity: useTransform(scrollYProgress, [0, 0.05], [1, 0]),
-                  pointerEvents: 'none'
+                  display: 'flex', gap: '1.5rem', cursor: 'pointer', 
+                  opacity: activeStep === index ? 1 : 0.4,
+                  transform: activeStep === index ? 'scale(1.02)' : 'scale(1)',
+                  transition: 'all 0.3s ease',
+                  padding: '1rem',
+                  borderRadius: '0.5rem',
+                  backgroundColor: activeStep === index ? 'rgba(167, 217, 66, 0.05)' : 'transparent',
+                  borderLeft: activeStep === index ? '4px solid var(--accent-green)' : '4px solid transparent'
                 }}
               >
-                <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--accent-green)', fontFamily: 'Sora', lineHeight: 1.1 }}>How the Affordable Toilet Ownership Model Works</h2>
-                <p style={{ fontSize: '1.125rem', color: '#8892b0', marginTop: '1rem' }}>A simple process designed to bring safe sanitation closer to every household.</p>
-              </motion.div>
-
-              <div style={{ position: 'relative', height: '50vh', width: '100%', display: 'flex', alignItems: 'center' }}>
-                {steps.map((step, i) => {
-                  const start = (i + 0.1) / (totalSteps + 1);
-                  const peak = (i + 0.5) / (totalSteps + 1);
-                  const end = (i + 0.9) / (totalSteps + 1);
-                  const isActive = useTransform(scrollYProgress, [start, peak, end], [0, 1, 0]);
-                  const yOffset = useTransform(scrollYProgress, [start, peak, end], [50, 0, -50]);
-
-                  return (
-                    <motion.div key={step.id} style={{ position: 'absolute', opacity: isActive, y: yOffset, width: '100%' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1rem' }}>
-                        <span style={{ fontSize: '1rem', letterSpacing: '2px', color: 'var(--secondary-green)', fontWeight: 600 }}>STEP {step.id}</span>
-                        <motion.div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: 'var(--accent-green)', opacity: isActive }} />
-                      </div>
-                      <h3 style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', margin: '0 0 1rem 0', fontFamily: 'Sora', lineHeight: 1.1 }}>{step.title}</h3>
-                      <p style={{ fontSize: 'clamp(1rem, 2vw, 1.25rem)', color: '#CCD6F6', lineHeight: 1.6, maxWidth: '400px' }}>{step.desc}</p>
-                    </motion.div>
-                  );
-                })}
+                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-green)', fontFamily: 'Sora' }}>
+                  {step.id}
+                </div>
+                <div>
+                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', marginBottom: '0.25rem' }}>{step.title}</h3>
+                  <AnimatePresence>
+                    {activeStep === index && (
+                      <motion.p 
+                        initial={{ opacity: 0, height: 0 }} 
+                        animate={{ opacity: 1, height: 'auto' }} 
+                        exit={{ opacity: 0, height: 0 }}
+                        style={{ color: '#CCD6F6', fontSize: '0.95rem', lineHeight: 1.5 }}
+                      >
+                        {step.desc}
+                      </motion.p>
+                    )}
+                  </AnimatePresence>
+                </div>
               </div>
-            </div>
-
-            {/* RIGHT IMAGE */}
-            <div style={{ flex: 1.2, position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ width: '100%', height: '60vh', position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)', backgroundColor: 'var(--primary-green)' }}>
-                {steps.map((step, i) => {
-                  const start = i / (totalSteps + 1);
-                  const peak = (i + 0.5) / (totalSteps + 1);
-                  const end = (i + 1) / (totalSteps + 1);
-                  const imageOpacity = useTransform(scrollYProgress, [start, start + 0.05, end - 0.05, end], [0, 1, 1, 0]);
-                  const scale = useTransform(scrollYProgress, [start, end], [1.15, 1]);
-
-                  return (
-                    <motion.div key={`img-${step.id}`} style={{ position: 'absolute', inset: 0, opacity: imageOpacity, scale }}>
-                      <MultiImagePlayer images={step.images} isActive={true} />
-                      
-                      {/* Step 2: Pulse Animation */}
-                      {step.id === '02' && (
-                        <motion.div 
-                          animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.02, 1] }} 
-                          transition={{ duration: 2, repeat: Infinity }}
-                          style={{ position: 'absolute', inset: '15%', border: '2px solid rgba(167,217,72,0.8)', borderRadius: '1rem', boxShadow: '0 0 30px rgba(167,217,72,0.5)' }} 
-                        />
-                      )}
-                      
-                      {/* Step 4: Text Overlay Reveal */}
-                      {step.id === '04' && (
-                        <motion.div 
-                          initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 1 }}
-                          style={{ position: 'absolute', bottom: '10%', left: 0, padding: '1rem 2rem', backgroundColor: 'var(--primary-green)', color: 'var(--white)', borderTopRightRadius: '1rem', borderBottomRightRadius: '1rem' }}
-                        >
-                          <span style={{ fontWeight: 'bold', color: 'var(--accent-green)' }}>WASH Education</span>
-                        </motion.div>
-                      )}
-
-                      {/* Step 5: Floating UI Card */}
-                      {step.id === '05' && (
-                        <motion.div 
-                          animate={{ y: [-10, 10, -10] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                          style={{ position: 'absolute', top: '20%', right: '10%', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.9)', borderRadius: '1rem', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', gap: '1rem' }}
-                        >
-                          <div style={{ width: '40px', height: '40px', backgroundColor: '#7CC242', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>✓</div>
-                          <div style={{ color: '#0F4D2F' }}>
-                            <div style={{ fontWeight: 'bold', fontSize: '1.125rem' }}>Payment Verified</div>
-                            <div style={{ fontSize: '0.875rem' }}>Mobile Money Transfer</div>
-                          </div>
-                        </motion.div>
-                      )}
-
-                      {/* Step 6: Success Cinematic Sunlight */}
-                      {step.id === '06' && <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top right, rgba(167,217,72,0.5) 0%, rgba(0,0,0,0) 60%)', mixBlendMode: 'screen' }} />}
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </div>
-
+            ))}
           </div>
 
-          {/* FINAL CTA SCREEN */}
-          <motion.div 
-            style={{ 
-              position: 'absolute', inset: 0, zIndex: 50,
-              backgroundColor: 'var(--primary-green)',
-              display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-              opacity: useTransform(scrollYProgress, [totalSteps / (totalSteps + 1), 1], [0, 1]),
-              pointerEvents: useTransform(scrollYProgress, (val) => val > 0.95 ? 'auto' : 'none')
-            }}
-          >
-            <motion.div style={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
-              <Image src="/images/atom-success.jpeg" fill style={{ objectFit: 'cover' }} alt="Background" sizes="100vw" />
-              <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--primary-green)', opacity: 0.7 }} />
-            </motion.div>
-            
-            <div style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
-              <h2 style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontFamily: 'Sora', marginBottom: '1rem' }}>Affordable Toilet<br/>Ownership Model</h2>
-              <p style={{ fontSize: 'clamp(1.25rem, 3vw, 2rem)', color: 'var(--accent-green)', marginBottom: '3rem' }}>Your Lasting Solution</p>
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center' }}>
-                <a href="#partner" className="btn-primary" style={{ backgroundColor: 'var(--accent-green)', color: 'var(--primary-green)' }}>Partner With Us</a>
-              </div>
-            </div>
-          </motion.div>
+          {/* Right Side: Animated Image */}
+          <div style={{ position: 'relative', height: '500px', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', backgroundColor: 'var(--primary-green)' }}>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeStep}
+                initial={{ opacity: 0, scale: 1.05 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.6, ease: 'easeInOut' }}
+                style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+              >
+                <Image 
+                  src={steps[activeStep].image} 
+                  alt={steps[activeStep].title}
+                  fill
+                  style={{ objectFit: 'cover' }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  priority
+                />
+                
+                {/* Visual Flourishes per step */}
+                {activeStep === 1 && (
+                  <motion.div 
+                    animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.02, 1] }} 
+                    transition={{ duration: 2, repeat: Infinity }}
+                    style={{ position: 'absolute', inset: '10%', border: '2px solid rgba(167,217,72,0.8)', borderRadius: '1rem', boxShadow: '0 0 30px rgba(167,217,72,0.5)' }} 
+                  />
+                )}
+                
+                {activeStep === 3 && (
+                  <motion.div 
+                    initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 0.8 }}
+                    style={{ position: 'absolute', bottom: '10%', left: 0, padding: '1rem 2rem', backgroundColor: 'var(--primary-green)', color: 'var(--white)', borderTopRightRadius: '1rem', borderBottomRightRadius: '1rem' }}
+                  >
+                    <span style={{ fontWeight: 'bold', color: 'var(--accent-green)' }}>WASH Education</span>
+                  </motion.div>
+                )}
 
-          {/* PROGRESS LINE */}
-          <div style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)', height: '50vh', width: '4px', backgroundColor: 'rgba(255,255,255,0.1)', zIndex: 40, borderRadius: '2px' }}>
-            <motion.div 
-              style={{ width: '100%', height: '100%', backgroundColor: 'var(--accent-green)', scaleY: scrollYProgress, transformOrigin: 'top', borderRadius: '2px', boxShadow: '0 0 10px var(--accent-green)' }}
-            />
+                {activeStep === 4 && (
+                  <motion.div 
+                    animate={{ y: [-10, 10, -10] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                    style={{ position: 'absolute', top: '15%', right: '10%', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.9)', borderRadius: '1rem', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', gap: '1rem' }}
+                  >
+                    <div style={{ width: '40px', height: '40px', backgroundColor: '#7CC242', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>✓</div>
+                    <div style={{ color: '#0F4D2F' }}>
+                      <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>Payment Verified</div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {activeStep === 5 && <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top right, rgba(167,217,72,0.4) 0%, rgba(0,0,0,0) 60%)', mixBlendMode: 'screen' }} />}
+              </motion.div>
+            </AnimatePresence>
           </div>
 
         </div>
