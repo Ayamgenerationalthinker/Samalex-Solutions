@@ -1,68 +1,40 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-
-const images = [
-  '/images/atom-construction.jpeg',
-  '/images/atom-success.jpeg',
-  '/images/atom-inspection.jpeg',
-  '/images/atom-registration.jpeg',
-  '/images/atom-handover.jpeg'
-];
+import { motion } from 'framer-motion';
 
 export default function Hero() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
   return (
-    <section style={{ position: 'relative', height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-      {/* Background Images */}
-      <AnimatePresence mode="popLayout">
-        <motion.div
-          key={currentIndex}
-          initial={{ opacity: 0, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1.5, ease: 'easeInOut' }}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundImage: `url(${images[currentIndex]})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            zIndex: 0
-          }}
+    <section style={{ 
+      position: 'relative', 
+      height: '100vh', 
+      width: '100vw', 
+      overflow: 'hidden', 
+      display: 'flex', 
+      alignItems: 'center', 
+      justifyContent: 'center',
+      backgroundColor: 'var(--primary-green)'
+    }}>
+      {/* Abstract Background Elements */}
+      <div style={{ position: 'absolute', inset: 0, overflow: 'hidden' }}>
+        <motion.div 
+          animate={{ rotate: 360 }}
+          transition={{ duration: 150, repeat: Infinity, ease: 'linear' }}
+          style={{ position: 'absolute', top: '-20%', right: '-10%', width: '800px', height: '800px', background: 'radial-gradient(circle, rgba(167,217,72,0.15) 0%, rgba(15,77,47,0) 70%)', borderRadius: '50%' }}
         />
-      </AnimatePresence>
-
-      {/* Overlay Gradient */}
-      <div style={{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        background: 'linear-gradient(to right, rgba(15, 77, 47, 0.9), rgba(15, 77, 47, 0.4))',
-        zIndex: 1
-      }} />
+        <motion.div 
+          animate={{ rotate: -360 }}
+          transition={{ duration: 200, repeat: Infinity, ease: 'linear' }}
+          style={{ position: 'absolute', bottom: '-20%', left: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(124,194,66,0.1) 0%, rgba(15,77,47,0) 70%)', borderRadius: '50%' }}
+        />
+      </div>
 
       {/* Content */}
-      <div className="container" style={{ position: 'relative', zIndex: 2, color: 'var(--white)' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2, color: 'var(--white)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          style={{ fontSize: 'clamp(3rem, 5vw, 5rem)', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '800px' }}
+          style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '1000px', fontFamily: 'Sora' }}
         >
           Affordable Sanitation.<br />
           <span style={{ color: 'var(--accent-green)' }}>Dignified Living.</span>
@@ -81,7 +53,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
+          style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', justifyContent: 'center' }}
         >
           <a href="#partner" className="btn-primary" style={{ backgroundColor: 'var(--accent-green)', color: 'var(--primary-green)' }}>Partner With Us</a>
           <a href="#contact" className="btn-secondary" style={{ borderColor: 'var(--white)', color: 'var(--white)' }}>Request A Consultation</a>

@@ -1,3 +1,4 @@
+import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import WhoWeAre from '@/components/WhoWeAre';
 import Solutions from '@/components/Solutions';
@@ -11,7 +12,8 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ position: 'relative' }}>
+      <Navbar />
       <Hero />
       <WhoWeAre />
       <Solutions />
