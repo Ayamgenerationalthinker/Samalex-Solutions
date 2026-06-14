@@ -56,7 +56,10 @@ export default function Contact() {
             style={{ padding: '3rem', backgroundColor: 'var(--white)' }}
           >
             <form action="https://formsubmit.co/samalexsolution1@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <input type="hidden" name="_subject" value="New Submission from Samalex Website!" />
+              {/* FormSubmit Config */}
+              <input type="hidden" name="_subject" value="New Partnership Inquiry - Samalex Solutions" />
+              <input type="hidden" name="_autoresponse" value="Thank you for your interest in partnering with Samalex Solutions! We have received your inquiry and our team will review it and get back to you shortly. Together, we can make sustainable sanitation accessible to all." />
+              <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
               
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>

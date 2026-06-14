@@ -1,14 +1,21 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function ImpactStory() {
   return (
     <section style={{ display: 'flex', flexDirection: 'column' }}>
       {/* Before Sanitation */}
       <div style={{ position: 'relative', height: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: '#1a1a1a', color: 'var(--white)' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/atom-inspection.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center', filter: 'grayscale(100%) blur(2px)' }} />
-        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.8)' }} />
+        <Image 
+          src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?auto=format&fit=crop&w=1200&q=80"
+          alt="Community before sanitation intervention"
+          fill
+          style={{ objectFit: 'cover', filter: 'grayscale(100%) blur(2px)', opacity: 0.4 }}
+          sizes="100vw"
+        />
+        <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.6)' }} />
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
@@ -25,8 +32,14 @@ export default function ImpactStory() {
 
       {/* After Intervention */}
       <div style={{ position: 'relative', height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--white)', color: 'var(--text-dark)' }}>
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/images/atom-success.jpeg)', backgroundSize: 'cover', backgroundPosition: 'center' }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 77, 47, 0.9), rgba(124, 194, 66, 0.4))' }} />
+        <Image 
+          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
+          alt="Happy children in a community after sanitation intervention"
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="100vw"
+        />
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(15, 77, 47, 0.95), rgba(124, 194, 66, 0.4))' }} />
         
         <motion.div 
           initial={{ opacity: 0, y: 30 }}

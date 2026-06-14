@@ -14,23 +14,20 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 style={{ fontSize: '1.125rem', marginBottom: '1.5rem', color: 'var(--white)' }}>Quick Links</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-              <li><a href="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'color 0.3s' }}>About Us</a></li>
-              <li><a href="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'color 0.3s' }}>Our Solutions</a></li>
-              <li><a href="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'color 0.3s' }}>The ATOM Model</a></li>
-              <li><a href="#" style={{ color: 'rgba(255,255,255,0.7)', transition: 'color 0.3s' }}>Project Gallery</a></li>
+            <h4 style={{ color: 'var(--white)', fontSize: '1.25rem', marginBottom: '1.5rem', fontFamily: 'Sora' }}>Quick Links</h4>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <li><a href="#about" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>About Us</a></li>
+              <li><a href="#solutions" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Our Solutions</a></li>
+              <li><a href="#partner" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Partner With Us</a></li>
+              <li><a href="#contact" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Contact</a></li>
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 style={{ fontSize: '1.125rem', marginBottom: '1.5rem', color: 'var(--white)' }}>Contact Us</h4>
-            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '0.75rem', color: 'rgba(255,255,255,0.7)' }}>
-              <li>0243673937</li>
-              <li>0244079924</li>
-              <li>samalexsolution1@gmail.com</li>
-              <li>Pokuase, Ga North, Ghana</li>
+            <h4 style={{ color: 'var(--white)', fontSize: '1.25rem', marginBottom: '1.5rem', fontFamily: 'Sora' }}>Connect</h4>
+            <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+              <li><a href="https://linkedin.com/company/samalex-solutions" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>LinkedIn</a></li>
+              <li><a href="mailto:samalexsolution1@gmail.com" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Email Us</a></li>
             </ul>
           </div>
         </div>

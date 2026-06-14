@@ -28,7 +28,9 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
+          style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}
         >
+          <a href="https://linkedin.com/company/samalex-solutions" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--white)', textDecoration: 'none', fontWeight: 600, fontSize: '0.875rem' }}>LinkedIn</a>
           <a href="#contact" className="btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '0.875rem' }}>Partner With Us</a>
         </motion.div>
       </div>

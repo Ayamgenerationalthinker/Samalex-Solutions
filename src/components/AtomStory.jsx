@@ -2,11 +2,16 @@
 
 import { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const steps = [
   { id: '01', title: 'Registration', desc: 'Residents begin the process by registering for the Affordable Toilet Ownership Model.', images: ['/images/atom-registration.jpeg'] },
   { id: '02', title: 'Inspection', desc: 'Our team assesses the site and identifies the most suitable sanitation solution.', images: ['/images/atom-inspection.jpeg'] },
-  { id: '03', title: 'Construction', desc: 'The sanitation facility is professionally constructed and installed.', images: ['/images/atom-construction.jpeg', '/images/atom-inspection.jpeg', '/images/atom-registration.jpeg'] },
+  { id: '03', title: 'Construction', desc: 'The sanitation facility is professionally constructed and installed.', images: [
+    '/images/atom-construction.jpeg', 
+    'https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=800&q=80',
+    'https://images.unsplash.com/photo-1541888087525-2bf54dea9b72?auto=format&fit=crop&w=800&q=80'
+  ] },
   { id: '04', title: 'Education & Handover', desc: 'Users receive training on proper usage, hygiene practices, and maintenance.', images: ['/images/atom-handover.jpeg'] },
   { id: '05', title: 'Payment', desc: 'Flexible payment options support sustainable toilet ownership.', images: ['/images/atom-payment.jpeg'] },
   { id: '06', title: 'Joy In Toilet', desc: 'Families enjoy a clean, safe, and dignified sanitation experience.', images: ['/images/atom-success.jpeg'] }
@@ -25,15 +30,22 @@ const MultiImagePlayer = ({ images, isActive }) => {
 
   return (
     <AnimatePresence mode="popLayout">
-      <motion.img
+      <motion.div
         key={idx}
-        src={images[idx]}
         initial={{ opacity: 0, scale: 1.05 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.2, ease: 'easeInOut' }}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-      />
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+      >
+        <Image 
+          src={images[idx]} 
+          alt="ATOM Story Step"
+          fill
+          style={{ objectFit: 'cover' }}
+          sizes="(max-width: 768px) 100vw, 50vw"
+        />
+      </motion.div>
     </AnimatePresence>
   );
 };
@@ -120,7 +132,7 @@ export default function AtomStory() {
             }}
           >
             <motion.div style={{ position: 'absolute', inset: 0, opacity: 0.3 }}>
-              <img src="/images/atom-success.jpeg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Background" />
+              <Image src="/images/atom-success.jpeg" fill style={{ objectFit: 'cover' }} alt="Background" sizes="100vw" />
               <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--primary-green)', opacity: 0.7 }} />
             </motion.div>
             

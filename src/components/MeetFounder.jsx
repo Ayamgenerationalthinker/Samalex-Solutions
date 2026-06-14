@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function MeetFounder() {
   return (
@@ -15,11 +16,14 @@ export default function MeetFounder() {
             transition={{ duration: 0.8 }}
             style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', height: '500px', boxShadow: '0 20px 40px rgba(0,0,0,0.3)' }}
           >
-            {/* Placeholder for Founder Portrait */}
-            <div style={{ position: 'absolute', inset: 0, backgroundColor: 'var(--secondary-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-               <span style={{ fontSize: '5rem', color: 'rgba(255,255,255,0.2)' }}>Portrait</span>
-            </div>
-            <img src="/images/atom-inspection.jpeg" alt="Founder" style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 0.8 }} />
+            <Image 
+              src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" 
+              alt="Founder of Samalex Solutions" 
+              fill
+              style={{ objectFit: 'cover', opacity: 0.9 }}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              priority
+            />
           </motion.div>
 
           <motion.div
@@ -43,7 +47,14 @@ export default function MeetFounder() {
               </p>
             </div>
             
-            <img src="/images/logo.jpg" alt="Signature" style={{ width: '150px', marginTop: '3rem', opacity: 0.8, filter: 'brightness(0) invert(1)' }} />
+            <div style={{ marginTop: '3rem', position: 'relative', width: '150px', height: '50px' }}>
+              <Image 
+                src="/images/logo.jpg" 
+                alt="Samalex Solutions Signature" 
+                fill
+                style={{ objectFit: 'contain', filter: 'brightness(0) invert(1)', opacity: 0.8 }} 
+              />
+            </div>
           </motion.div>
 
         </div>

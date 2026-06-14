@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import Image from 'next/image';
 
 const images = [
+  'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80', // Happy community
   '/images/atom-inspection.jpeg',
   '/images/atom-construction.jpeg',
-  '/images/atom-handover.jpeg',
   '/images/atom-success.jpeg'
 ];
 
@@ -24,15 +25,23 @@ export default function Hero() {
     <section style={{ position: 'relative', height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--text-dark)' }}>
       {/* Background Images with Ken Burns */}
       <AnimatePresence mode="popLayout">
-        <motion.img
+        <motion.div
           key={currentIndex}
-          src={images[currentIndex]}
           initial={{ opacity: 0, scale: 1.15 }}
           animate={{ opacity: 1, scale: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 2, ease: 'easeOut' }}
-          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }}
-        />
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}
+        >
+          <Image 
+            src={images[currentIndex]}
+            alt="Samalex Solutions Impact"
+            fill
+            style={{ objectFit: 'cover' }}
+            priority={currentIndex === 0}
+            sizes="100vw"
+          />
+        </motion.div>
       </AnimatePresence>
 
       {/* Dark Green Overlay */}
