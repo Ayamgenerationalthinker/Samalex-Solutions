@@ -36,7 +36,7 @@ const MultiImagePlayer = ({ images, isActive }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0 }}
         transition={{ duration: 1.2, ease: 'easeInOut' }}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', backgroundColor: 'var(--primary-green)' }} // Fallback background color
       >
         <Image 
           src={images[idx]} 
@@ -62,9 +62,8 @@ export default function AtomStory() {
           
           <div className="container" style={{ display: 'flex', width: '100%', height: '100%', position: 'relative', zIndex: 10 }}>
             
-            {/* LEFT TEXT (Desktop) / TOP TEXT (Mobile) */}
+            {/* LEFT TEXT */}
             <div style={{ flex: 1, display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingRight: '2rem', zIndex: 20 }}>
-              {/* Intro Title */}
               <motion.div 
                 style={{ 
                   position: 'absolute', top: '25%', left: '2rem', right: '50%',
@@ -98,9 +97,9 @@ export default function AtomStory() {
               </div>
             </div>
 
-            {/* RIGHT IMAGE (Desktop) / BOTTOM IMAGE (Mobile) */}
+            {/* RIGHT IMAGE */}
             <div style={{ flex: 1.2, position: 'relative', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <div style={{ width: '100%', height: '60vh', position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)' }}>
+              <div style={{ width: '100%', height: '60vh', position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)', backgroundColor: 'var(--primary-green)' }}>
                 {steps.map((step, i) => {
                   const start = i / (totalSteps + 1);
                   const peak = (i + 0.5) / (totalSteps + 1);
@@ -111,8 +110,42 @@ export default function AtomStory() {
                   return (
                     <motion.div key={`img-${step.id}`} style={{ position: 'absolute', inset: 0, opacity: imageOpacity, scale }}>
                       <MultiImagePlayer images={step.images} isActive={true} />
-                      {step.id === '02' && <motion.div style={{ position: 'absolute', inset: '15%', border: '2px solid rgba(167,217,72,0.5)', borderRadius: '1rem', boxShadow: '0 0 20px rgba(167,217,72,0.3)' }} />}
-                      {step.id === '06' && <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle, rgba(167,217,72,0.3) 0%, rgba(0,0,0,0) 70%)' }} />}
+                      
+                      {/* Step 2: Pulse Animation */}
+                      {step.id === '02' && (
+                        <motion.div 
+                          animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.02, 1] }} 
+                          transition={{ duration: 2, repeat: Infinity }}
+                          style={{ position: 'absolute', inset: '15%', border: '2px solid rgba(167,217,72,0.8)', borderRadius: '1rem', boxShadow: '0 0 30px rgba(167,217,72,0.5)' }} 
+                        />
+                      )}
+                      
+                      {/* Step 4: Text Overlay Reveal */}
+                      {step.id === '04' && (
+                        <motion.div 
+                          initial={{ x: '-100%' }} whileInView={{ x: 0 }} transition={{ duration: 1 }}
+                          style={{ position: 'absolute', bottom: '10%', left: 0, padding: '1rem 2rem', backgroundColor: 'var(--primary-green)', color: 'var(--white)', borderTopRightRadius: '1rem', borderBottomRightRadius: '1rem' }}
+                        >
+                          <span style={{ fontWeight: 'bold', color: 'var(--accent-green)' }}>WASH Education</span>
+                        </motion.div>
+                      )}
+
+                      {/* Step 5: Floating UI Card */}
+                      {step.id === '05' && (
+                        <motion.div 
+                          animate={{ y: [-10, 10, -10] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                          style={{ position: 'absolute', top: '20%', right: '10%', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.9)', borderRadius: '1rem', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', gap: '1rem' }}
+                        >
+                          <div style={{ width: '40px', height: '40px', backgroundColor: '#7CC242', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>✓</div>
+                          <div style={{ color: '#0F4D2F' }}>
+                            <div style={{ fontWeight: 'bold', fontSize: '1.125rem' }}>Payment Verified</div>
+                            <div style={{ fontSize: '0.875rem' }}>Mobile Money Transfer</div>
+                          </div>
+                        </motion.div>
+                      )}
+
+                      {/* Step 6: Success Cinematic Sunlight */}
+                      {step.id === '06' && <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top right, rgba(167,217,72,0.5) 0%, rgba(0,0,0,0) 60%)', mixBlendMode: 'screen' }} />}
                     </motion.div>
                   );
                 })}

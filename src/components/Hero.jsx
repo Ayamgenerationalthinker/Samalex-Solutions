@@ -22,7 +22,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section style={{ position: 'relative', height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--text-dark)' }}>
+    <section style={{ position: 'relative', height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--primary-green)' }}>
       {/* Background Images with Ken Burns */}
       <AnimatePresence mode="popLayout">
         <motion.div

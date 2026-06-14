@@ -11,7 +11,9 @@ const galleryItems = [
   { id: 2, src: '/images/atom-inspection.jpeg', category: 'Communities', title: 'Site Inspection' },
   { id: 3, src: '/images/atom-handover.jpeg', category: 'Schools', title: 'Facility Handover' },
   { id: 4, src: '/images/atom-payment.jpeg', category: 'Communities', title: 'ATOM Registration' },
-  { id: 5, src: '/images/atom-success.jpeg', category: 'Schools', title: 'Completed Project' }
+  { id: 5, src: '/images/atom-success.jpeg', category: 'Schools', title: 'Completed Project' },
+  { id: 6, src: '/images/gallery-1.jpg', category: 'Communities', title: 'Community Outreach' },
+  { id: 7, src: '/images/gallery-2.jpg', category: 'Construction', title: 'Team on Site' }
 ];
 
 export default function Gallery() {
