@@ -1,12 +1,15 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Heart, ShieldCheck, Users } from 'lucide-react';
+import { ShieldCheck, HeartHandshake, Map, Clock, Droplet, Leaf } from 'lucide-react';
 
 const partners = [
-  { title: 'Social Impact', icon: Heart, desc: 'We deliver measurable improvements in public health, school attendance, and community dignity.' },
-  { title: 'Environmental Sustainability', icon: ShieldCheck, desc: 'Our biodigester technology protects groundwater and reduces carbon footprints.' },
-  { title: 'Community Development', icon: Users, desc: 'We train local artisans and empower beneficiaries through our unique ownership model.' }
+  { title: 'Sustainable Technology', icon: ShieldCheck, desc: 'Our biodigester systems are rigorously tested, water-efficient, and engineered for long-term reliability in varying climates.' },
+  { title: 'Community Ownership Model', icon: HeartHandshake, desc: 'We don\'t just give toilets away; our ATOM model ensures beneficiaries invest in and maintain their facilities.' },
+  { title: 'Local Implementation Expertise', icon: Map, desc: 'Deep roots in Ghanaian communities allow us to navigate local nuances, secure permissions, and hire local artisans.' },
+  { title: 'Long-Term Impact', icon: Clock, desc: 'Every project is tracked for longevity. We aim for generational change, not just short-term numbers.' },
+  { title: 'Hygiene Education', icon: Droplet, desc: 'Infrastructure is paired with comprehensive WASH (Water, Sanitation, and Hygiene) education for maximum health outcomes.' },
+  { title: 'Environmental Sustainability', icon: Leaf, desc: 'Our zero-odor systems safely convert waste to organic manure, protecting groundwater and reducing carbon footprints.' }
 ];
 
 export default function WhyPartner() {
@@ -14,9 +17,9 @@ export default function WhyPartner() {
     <section id="partner" className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 className="section-title">Why Partner With Samalex</h2>
+          <h2 className="section-title">Why NGOs & Institutions Partner With Samalex</h2>
           <p className="section-subtitle" style={{ margin: '0 auto' }}>
-            A trusted implementation partner for NGOs, Development Agencies, and CSR programs.
+            We bring local expertise, sustainable technology, and a proven implementation model.
           </p>
         </div>
 
@@ -27,31 +30,28 @@ export default function WhyPartner() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ y: -10 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(15, 77, 47, 0.15)' }}
               style={{
-                backgroundColor: 'var(--primary-green)',
-                color: 'var(--white)',
+                backgroundColor: 'var(--white)',
                 padding: '3rem 2rem',
                 borderRadius: '1.5rem',
-                position: 'relative',
-                overflow: 'hidden',
-                boxShadow: '0 20px 40px rgba(15, 77, 47, 0.2)'
+                border: '1px solid rgba(15, 77, 47, 0.1)',
+                transition: 'all 0.3s ease'
               }}
             >
-              {/* Background Glow */}
               <div style={{ 
-                position: 'absolute', top: '-50px', right: '-50px', 
-                width: '150px', height: '150px', 
-                backgroundColor: 'var(--accent-green)', 
-                borderRadius: '50%', filter: 'blur(50px)', opacity: 0.3 
-              }} />
-
-              <div style={{ marginBottom: '1.5rem', color: 'var(--accent-green)' }}>
-                <item.icon size={48} strokeWidth={1.5} />
+                width: '64px', height: '64px', 
+                borderRadius: '1rem', 
+                backgroundColor: 'var(--primary-green)', 
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                color: 'var(--accent-green)',
+                marginBottom: '1.5rem'
+              }}>
+                <item.icon size={32} />
               </div>
-              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'Sora' }}>{item.title}</h3>
-              <p style={{ color: 'rgba(255,255,255,0.8)', lineHeight: 1.6 }}>{item.desc}</p>
+              <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'Sora', color: 'var(--primary-green)' }}>{item.title}</h3>
+              <p style={{ color: '#4b5563', lineHeight: 1.6 }}>{item.desc}</p>
             </motion.div>
           ))}
         </div>
