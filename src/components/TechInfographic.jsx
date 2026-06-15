@@ -45,7 +45,7 @@ export default function TechInfographic() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', position: 'relative', zIndex: 1 }}
+                style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', position: 'relative', zIndex: 1, flexWrap: 'wrap' }}
               >
                 {/* Node */}
                 <motion.div 

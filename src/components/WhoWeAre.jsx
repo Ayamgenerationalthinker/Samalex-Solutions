@@ -6,7 +6,7 @@ import Image from 'next/image';
 export default function WhoWeAre() {
   return (
     <section className="section-padding" style={{ position: 'relative', backgroundColor: 'var(--bg-light)', overflow: 'hidden' }}>
-      <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+      <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
         
         {/* Text Content */}
         <motion.div
@@ -32,7 +32,8 @@ export default function WhoWeAre() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          style={{ position: 'relative', height: '500px', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 25px 50px rgba(0,0,0,0.15)', border: '1px solid rgba(255,255,255,0.5)' }}
+          className="responsive-img-container"
+          style={{ position: 'relative', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 25px 50px rgba(0,0,0,0.15)', border: '1px solid rgba(255,255,255,0.5)' }}
         >
           <Image 
             src="/images/sama.jpg" 

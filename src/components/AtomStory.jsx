@@ -47,7 +47,7 @@ export default function AtomStory() {
           </motion.p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem', alignItems: 'center' }}>
           
           {/* Left Side: Steps List */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -89,7 +89,7 @@ export default function AtomStory() {
           </div>
 
           {/* Right Side: Animated Image */}
-          <div style={{ position: 'relative', height: '500px', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', backgroundColor: 'var(--primary-green)' }}>
+          <div className="responsive-img-container" style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', backgroundColor: 'var(--primary-green)' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}

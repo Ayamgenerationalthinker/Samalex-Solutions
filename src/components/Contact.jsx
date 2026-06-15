@@ -7,7 +7,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem' }}>
           
           {/* Left: Contact Info */}
           <motion.div
@@ -53,7 +53,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="glass-panel"
-            style={{ padding: '3rem', backgroundColor: 'var(--white)' }}
+            style={{ backgroundColor: 'var(--white)' }}
           >
             <form action="https://formsubmit.co/samalexsolution1@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {/* FormSubmit Config */}
@@ -62,7 +62,7 @@ export default function Contact() {
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_captcha" value="false" />
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: 500, color: '#374151' }}>Name</label>
                   <input type="text" name="name" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid #d1d5db', outline: 'none' }} />
@@ -73,7 +73,7 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: 500, color: '#374151' }}>Email</label>
                   <input type="email" name="email" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid #d1d5db', outline: 'none' }} />

@@ -11,18 +11,18 @@ export default function MeetFounder() {
       <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(167,217,72,0.15) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           
           {/* Skeleton Placeholder for CEO Image */}
           <motion.div 
             initial={{ opacity: 0.5 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
+            className="responsive-img-container"
             style={{ 
               position: 'relative', 
               borderRadius: '1.5rem', 
               overflow: 'hidden', 
-              height: '500px', 
               backgroundColor: 'rgba(255,255,255,0.05)',
               border: '2px dashed rgba(255,255,255,0.2)',
               display: 'flex',

@@ -94,12 +94,33 @@ a {
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
   border-radius: 1rem;
+  padding: 3rem;
 }
 
 .section-title {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-family: 'Sora', sans-serif;
   color: var(--primary-green);
+  margin-bottom: 1rem;
+}
+
+.responsive-img-container {
+  height: 500px;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 4rem 0;
+  }
+  .responsive-img-container {
+    height: 350px !important;
+  }
+  .container {
+    padding: 0 1rem;
+  }
+  .glass-panel {
+    padding: 1.5rem;
+  }
 }
 
 .section-subtitle {

@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer style={{ backgroundColor: 'var(--primary-green)', color: 'var(--white)', padding: '4rem 0 2rem 0' }}>
       <div className="container">
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '3rem', marginBottom: '4rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '3rem', marginBottom: '4rem' }}>
           
           {/* Brand */}
           <div style={{ gridColumn: 'span 2' }}>

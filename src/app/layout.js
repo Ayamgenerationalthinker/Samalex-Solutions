@@ -6,6 +6,12 @@ export const metadata = {
   keywords: 'Biodigester Toilets Ghana, Affordable Toilets Ghana, School Sanitation Ghana, Community Sanitation Ghana, Sustainable Sanitation Ghana, Toilet Ownership Model Ghana',
 };
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
