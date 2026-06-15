@@ -121,6 +121,12 @@ a {
   .glass-panel {
     padding: 1.5rem;
   }
+  .btn-primary, .btn-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+    width: 100%;
+    text-align: center;
+  }
 }
 
 .section-subtitle {

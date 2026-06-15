@@ -53,7 +53,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container" style={{ position: 'relative', zIndex: 2, color: 'var(--white)', paddingTop: '5rem' }}>
-        <h1 style={{ fontSize: 'clamp(3rem, 6vw, 5.5rem)', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '900px', fontFamily: 'Sora', overflow: 'hidden' }}>
+        <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '900px', fontFamily: 'Sora', overflow: 'hidden' }}>
           <motion.span 
             initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
             style={{ display: 'block' }}

@@ -11,7 +11,6 @@ import FeaturedProject from '@/components/FeaturedProject';
 import MeetFounder from '@/components/MeetFounder';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import FloatingCTA from '@/components/FloatingCTA';
 
 export default function Home() {
   return (
@@ -29,7 +28,6 @@ export default function Home() {
       <MeetFounder />
       <Contact />
       <Footer />
-      <FloatingCTA />
     </main>
   );
 }
