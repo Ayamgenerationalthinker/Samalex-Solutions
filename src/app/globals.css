@@ -127,6 +127,21 @@ a {
     width: 100%;
     text-align: center;
   }
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-toggle {
+    display: block !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-nav {
+    display: block !important;
+  }
+  .mobile-toggle {
+    display: none !important;
+  }
 }
 
 .section-subtitle {

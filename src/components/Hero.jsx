@@ -6,9 +6,9 @@ import Image from 'next/image';
 
 const images = [
   'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80', // Happy community
-  '/images/atom-inspection.jpeg',
-  '/images/atom-construction.jpeg',
-  '/images/atom-success.jpeg'
+  'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80', // Eco friendly
+  'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80', // Clean environment
+  'https://images.unsplash.com/photo-1473643213032-41ce101030e2?auto=format&fit=crop&w=1200&q=80'  // Water and nature
 ];
 
 export default function Hero() {
