@@ -8,12 +8,11 @@ import Image from 'next/image';
 const categories = ['All', 'Construction', 'Schools', 'Communities'];
 
 const galleryItems = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1541888086225-eb43fbfa07cb?w=600&h=450&fit=crop', category: 'Construction', title: 'Team on Site', width: 600, height: 450 },
-  { id: 2, src: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=800&fit=crop', category: 'Communities', title: 'Community Outreach', width: 600, height: 800 },
-  { id: 3, src: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&h=600&fit=crop', category: 'Schools', title: 'School Education', width: 600, height: 600 },
-  { id: 4, src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=450&fit=crop', category: 'Construction', title: 'Installation', width: 600, height: 450 },
-  { id: 5, src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=800&fit=crop', category: 'Communities', title: 'Empowerment', width: 600, height: 800 },
-  { id: 6, src: 'https://images.unsplash.com/photo-1427504494785-319ce515cd69?w=600&h=450&fit=crop', category: 'Schools', title: 'Sanitation Facilities', width: 600, height: 450 }
+  { id: 1, src: '/images/1.jpg', category: 'Construction', title: 'Site Inspection', width: 600, height: 450 },
+  { id: 2, src: '/images/2.jpg', category: 'Communities', title: 'Community Handover', width: 600, height: 800 },
+  { id: 3, src: '/images/3.jpg', category: 'Schools', title: 'Sanitation Facility', width: 600, height: 600 },
+  { id: 4, src: '/images/4.jpg', category: 'Construction', title: 'Installation Phase', width: 600, height: 450 },
+  { id: 5, src: '/images/5.jpg', category: 'Communities', title: 'Safe Hygiene', width: 600, height: 800 }
 ];
 
 export default function Gallery() {
@@ -23,7 +22,7 @@ export default function Gallery() {
   const filteredItems = filter === 'All' ? galleryItems : galleryItems.filter(i => i.category === filter);
 
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--white)' }}>
+    <section id="impact" className="section-padding" style={{ backgroundColor: 'var(--white)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 className="section-title">Our Impact Gallery</h2>
