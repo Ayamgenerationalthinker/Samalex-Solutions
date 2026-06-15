@@ -3,12 +3,17 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X } from 'lucide-react';
+import Image from 'next/image';
 
 const categories = ['All', 'Construction', 'Schools', 'Communities'];
 
 const galleryItems = [
-  { id: 1, src: '/images/gallery-1.jpg', category: 'Construction', title: 'Team on Site' },
-  { id: 2, src: '/images/gallery-2.jpg', category: 'Communities', title: 'Community Outreach' }
+  { id: 1, src: 'https://images.unsplash.com/photo-1541888086225-eb43fbfa07cb?w=600&h=450&fit=crop', category: 'Construction', title: 'Team on Site', width: 600, height: 450 },
+  { id: 2, src: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?w=600&h=800&fit=crop', category: 'Communities', title: 'Community Outreach', width: 600, height: 800 },
+  { id: 3, src: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?w=600&h=600&fit=crop', category: 'Schools', title: 'School Education', width: 600, height: 600 },
+  { id: 4, src: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=450&fit=crop', category: 'Construction', title: 'Installation', width: 600, height: 450 },
+  { id: 5, src: 'https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=600&h=800&fit=crop', category: 'Communities', title: 'Empowerment', width: 600, height: 800 },
+  { id: 6, src: 'https://images.unsplash.com/photo-1427504494785-319ce515cd69?w=600&h=450&fit=crop', category: 'Schools', title: 'Sanitation Facilities', width: 600, height: 450 }
 ];
 
 export default function Gallery() {
@@ -61,13 +66,19 @@ export default function Gallery() {
                 onClick={() => setSelectedImg(item)}
                 className="gallery-item"
               >
-                <motion.img 
-                  src={item.src} 
-                  alt={item.title} 
-                  style={{ width: '100%', display: 'block', borderRadius: '1rem' }}
+                <motion.div 
                   whileHover={{ scale: 1.05 }}
                   transition={{ duration: 0.4 }}
-                />
+                  style={{ display: 'block', width: '100%' }}
+                >
+                  <Image 
+                    src={item.src} 
+                    alt={item.title} 
+                    width={item.width}
+                    height={item.height}
+                    style={{ width: '100%', height: 'auto', display: 'block', borderRadius: '1rem' }}
+                  />
+                </motion.div>
                 {/* Overlay */}
                 <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(15, 77, 47, 0.7)', opacity: 0, transition: 'opacity 0.3s ease', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }} className="overlay">
                   <span style={{ color: 'var(--accent-green)', fontWeight: 'bold' }}>{item.category}</span>
@@ -99,11 +110,12 @@ export default function Gallery() {
               >
                 <X size={40} />
               </button>
-              <motion.img 
+              <Image 
                 src={selectedImg.src} 
-                initial={{ scale: 0.8 }}
-                animate={{ scale: 1 }}
-                style={{ maxWidth: '100%', maxHeight: '90vh', borderRadius: '0.5rem', objectFit: 'contain' }}
+                alt={selectedImg.title}
+                width={selectedImg.width}
+                height={selectedImg.height}
+                style={{ maxWidth: '100%', maxHeight: '90vh', width: 'auto', height: 'auto', borderRadius: '0.5rem', objectFit: 'contain' }}
               />
               <div style={{ position: 'absolute', bottom: '2rem', color: 'white', textAlign: 'center' }}>
                 <h3 style={{ fontSize: '2rem' }}>{selectedImg.title}</h3>

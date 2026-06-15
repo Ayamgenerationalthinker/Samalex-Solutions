@@ -18,7 +18,6 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li><a href="#about" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>About Us</a></li>
               <li><a href="#solutions" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Our Solutions</a></li>
-              <li><a href="#partner" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Partner With Us</a></li>
               <li><a href="#contact" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Contact</a></li>
             </ul>
           </div>
@@ -27,16 +26,14 @@ export default function Footer() {
             <h4 style={{ color: 'var(--white)', fontSize: '1.25rem', marginBottom: '1.5rem', fontFamily: 'Sora' }}>Connect</h4>
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li><a href="mailto:samalexsolution1@gmail.com" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Email Us</a></li>
+              <li><a href="https://linkedin.com/company/samalex-solutions" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>LinkedIn</a></li>
             </ul>
           </div>
         </div>
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)', paddingTop: '2rem', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '1rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.875rem' }}>
           <p>&copy; {new Date().getFullYear()} Samalex Solutions. All rights reserved.</p>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <a href="#" style={{ color: 'inherit' }}>Privacy Policy</a>
-            <a href="#" style={{ color: 'inherit' }}>Terms of Service</a>
-          </div>
+
         </div>
       </div>
     </footer>
