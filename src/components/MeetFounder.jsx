@@ -13,28 +13,27 @@ export default function MeetFounder() {
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
           
-          {/* Skeleton Placeholder for CEO Image */}
+          {/* CEO Image */}
           <motion.div 
-            initial={{ opacity: 0.5 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatType: 'reverse' }}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="responsive-img-container"
             style={{ 
               position: 'relative', 
               borderRadius: '1.5rem', 
               overflow: 'hidden', 
-              backgroundColor: 'rgba(255,255,255,0.05)',
-              border: '2px dashed rgba(255,255,255,0.2)',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 25px 50px rgba(0,0,0,0.4)' 
+              boxShadow: '0 25px 50px rgba(0,0,0,0.4)',
+              aspectRatio: '3/4'
             }}
           >
-            <div style={{ color: 'rgba(255,255,255,0.4)', fontFamily: 'Sora', fontSize: '1.25rem', textAlign: 'center', padding: '2rem' }}>
-              CEO Portrait<br/><span style={{ fontSize: '0.875rem' }}>(Awaiting Submission)</span>
-            </div>
+            <Image 
+              src="/images/CEO.jpg" 
+              alt="Samuel Gyabah - Founder & CEO" 
+              fill
+              style={{ objectFit: 'cover' }}
+            />
           </motion.div>
 
           {/* Samuel Gyabah Profile (Glassy) */}

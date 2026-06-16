@@ -12,7 +12,8 @@ const galleryItems = [
   { id: 2, src: '/images/2.jpg', category: 'Communities', title: 'Community Handover', width: 600, height: 800 },
   { id: 3, src: '/images/3.jpg', category: 'Schools', title: 'Sanitation Facility', width: 600, height: 600 },
   { id: 4, src: '/images/4.jpg', category: 'Construction', title: 'Installation Phase', width: 600, height: 450 },
-  { id: 5, src: '/images/5.jpg', category: 'Communities', title: 'Safe Hygiene', width: 600, height: 800 }
+  { id: 5, src: '/images/5.jpg', category: 'Communities', title: 'Safe Hygiene', width: 600, height: 800 },
+  { id: 6, src: '/images/6.jpg', category: 'Construction', title: 'Project Progress', width: 600, height: 450 }
 ];
 
 export default function Gallery() {

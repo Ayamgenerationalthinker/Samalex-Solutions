@@ -39,8 +39,8 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
         >
-          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={45} height={45} style={{ height: 'clamp(35px, 8vw, 45px)', width: 'auto', borderRadius: '50%', objectFit: 'contain' }} />
-          <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: 'clamp(1.1rem, 4vw, 1.5rem)', fontWeight: 'bold' }}>
+          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={80} height={80} style={{ height: 'clamp(60px, 12vw, 80px)', width: 'auto', borderRadius: '50%', objectFit: 'contain' }} />
+          <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: 'clamp(1.3rem, 5vw, 1.8rem)', fontWeight: 'bold' }}>
             Samalex Solutions
           </span>
         </motion.div>
