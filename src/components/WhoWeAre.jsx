@@ -36,7 +36,7 @@ export default function WhoWeAre() {
           style={{ position: 'relative', borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 25px 50px rgba(0,0,0,0.15)', border: '1px solid rgba(255,255,255,0.5)' }}
         >
           <Image 
-            src="/images/sama.jpg" 
+            src="/images/flyer.jpeg" 
             alt="Samalex Solutions Team" 
             fill
             style={{ objectFit: 'cover' }} 

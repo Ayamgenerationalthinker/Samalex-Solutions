@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap');
 
 :root {
-  --primary-green: #0F4D2F;
-  --secondary-green: #7CC242;
-  --accent-green: #A7D948;
-  --bg-light: #F8FBF8;
-  --text-dark: #111827;
+  --primary-green: #04391C; /* Dark green from text outlines and bottom bar */
+  --secondary-green: #37B34A; /* Vibrant lime green from SAMALEX text */
+  --accent-green: #D4F428; /* Yellow-green accent from bottom glow */
+  --bg-light: #F0F9ED; /* Very light green tinted background */
+  --text-dark: #04391C; /* Dark green for text */
   --white: #FFFFFF;
 }
 
