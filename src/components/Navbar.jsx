@@ -30,7 +30,7 @@ export default function Navbar() {
       WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
       borderBottom: scrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid transparent',
       transition: 'all 0.3s ease',
-      padding: scrolled ? '0.75rem 0' : '1.5rem 0'
+      padding: scrolled ? '0.5rem 0' : '1rem 0'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <motion.div 
@@ -39,8 +39,8 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
         >
-          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={140} height={140} style={{ height: 'clamp(80px, 15vw, 140px)', width: 'auto', borderRadius: '8px', objectFit: 'contain', background: '#fff', padding: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
-          <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: 'clamp(1.4rem, 6vw, 2.2rem)', fontWeight: 'bold' }}>
+          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={56} height={56} style={{ height: '56px', width: '56px', borderRadius: '10px', objectFit: 'cover', background: '#fff', padding: '2px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', flexShrink: 0 }} />
+          <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: 'clamp(1rem, 3vw, 1.5rem)', fontWeight: 'bold', lineHeight: 1.2 }}>
             Samalex Solutions
           </span>
         </motion.div>
@@ -59,7 +59,6 @@ export default function Navbar() {
                 {link.name}
               </a>
             ))}
-            <a href="#partner" className="btn-primary" style={{ padding: '0.75rem 1.5rem', fontSize: '0.9rem' }}>Partner With Us</a>
           </div>
         </motion.div>
 
@@ -84,7 +83,6 @@ export default function Navbar() {
                   {link.name}
                 </a>
               ))}
-              <a href="#partner" onClick={() => setIsOpen(false)} className="btn-primary" style={{ textAlign: 'center' }}>Partner With Us</a>
             </div>
           </motion.div>
         )}

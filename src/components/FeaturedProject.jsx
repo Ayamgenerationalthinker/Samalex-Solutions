@@ -26,7 +26,7 @@ export default function FeaturedProject() {
             
             <div style={{ marginTop: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '2rem', textAlign: 'left' }}>
               <div style={{ background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(10px)', padding: '2rem', borderRadius: '1rem', border: '1px solid rgba(255,255,255,0.5)', boxShadow: '0 10px 30px rgba(0,0,0,0.05)', transition: 'transform 0.3s' }}>
-                <h4 style={{ fontSize: '1.25rem', color: '#dc2626', marginBottom: '1rem', fontFamily: 'Sora', fontWeight: 'bold' }}>The Challenge</h4>
+                <h4 style={{ fontSize: '1.25rem', color: 'var(--primary-green)', marginBottom: '1rem', fontFamily: 'Sora', fontWeight: 'bold' }}>The Challenge</h4>
                 <p style={{ color: '#4b5563', lineHeight: 1.6 }}>The local school lacked adequate, hygienic toilet facilities, leading to low attendance rates, especially among young girls, and increasing the risk of waterborne diseases.</p>
               </div>
               

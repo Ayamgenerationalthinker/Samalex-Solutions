@@ -22,7 +22,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section style={{ position: 'relative', height: '100vh', width: '100vw', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--primary-green)' }}>
+    <section style={{ position: 'relative', minHeight: '100vh', width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--primary-green)' }}>
       {/* Background Images with Ken Burns */}
       <AnimatePresence mode="popLayout">
         <motion.div
@@ -52,7 +52,7 @@ export default function Hero() {
       }} />
 
       {/* Content */}
-      <div className="container" style={{ position: 'relative', zIndex: 2, color: 'var(--white)', paddingTop: '5rem' }}>
+      <div className="container" style={{ position: 'relative', zIndex: 2, color: 'var(--white)', paddingTop: 'clamp(8rem, 12vw, 11rem)', paddingBottom: '4rem' }}>
         <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', lineHeight: 1.1, marginBottom: '1.5rem', maxWidth: '900px', fontFamily: 'Sora', overflow: 'hidden' }}>
           <motion.span 
             initial={{ y: '100%' }} animate={{ y: 0 }} transition={{ duration: 0.8, delay: 0.2, ease: [0.33, 1, 0.68, 1] }}
