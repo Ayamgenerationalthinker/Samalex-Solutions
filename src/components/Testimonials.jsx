@@ -29,7 +29,7 @@ export default function Testimonials() {
         <div 
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
-          style={{ position: 'relative', height: '250px', marginTop: '3rem' }}
+          className="testimonials-slider"
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -40,7 +40,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
             >
-              <p style={{ fontSize: '1.5rem', fontStyle: 'italic', color: 'var(--text-dark)', lineHeight: 1.6, marginBottom: '2rem' }}>
+              <p className="testimonial-quote">
                 "{testimonials[currentIndex].quote}"
               </p>
               <div>

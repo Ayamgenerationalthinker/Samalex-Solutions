@@ -52,7 +52,7 @@ export default function Gallery() {
         </div>
 
         {/* Masonry Grid */}
-        <motion.div layout style={{ columnCount: 3, columnGap: '1.5rem' }}>
+        <motion.div layout className="gallery-grid">
           <AnimatePresence>
             {filteredItems.map((item) => (
               <motion.div

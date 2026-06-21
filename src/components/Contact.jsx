@@ -40,7 +40,7 @@ export default function Contact() {
                 <div style={{ color: 'var(--primary-green)' }}><Mail size={24} /></div>
                 <div>
                   <h4 style={{ fontSize: '1.125rem', color: 'var(--text-dark)', marginBottom: '0.25rem' }}>Email</h4>
-                  <p style={{ color: '#6b7280' }}>samalexsolution1@gmail.com</p>
+                  <p style={{ color: '#6b7280' }}>samalexsolution24@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -55,7 +55,7 @@ export default function Contact() {
             className="glass-panel"
             style={{ backgroundColor: 'var(--white)' }}
           >
-            <form action="https://formsubmit.co/samalexsolution1@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <form action="https://formsubmit.co/samalexsolution24@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {/* FormSubmit Config */}
               <input type="hidden" name="_subject" value="New Partnership Inquiry - Samalex Solutions" />
               <input type="hidden" name="_autoresponse" value="Thank you for your interest in partnering with Samalex Solutions! We have received your inquiry and our team will review it and get back to you shortly. Together, we can make sustainable sanitation accessible to all." />

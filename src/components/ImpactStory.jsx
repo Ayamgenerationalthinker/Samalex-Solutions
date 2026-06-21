@@ -24,7 +24,7 @@ export default function ImpactStory() {
           transition={{ duration: 1 }}
           style={{ position: 'relative', zIndex: 2, textAlign: 'center', maxWidth: '800px', padding: '0 2rem' }}
         >
-          <span style={{ color: '#6b7280', fontSize: '1rem', letterSpacing: '2px', textTransform: 'uppercase' }}>The Challenge</span>
+          <span style={{ color: '#f87171', fontSize: '1.125rem', letterSpacing: '2px', textTransform: 'uppercase', fontWeight: 'bold' }}>The Challenge</span>
           <h2 style={{ fontSize: 'clamp(2rem, 5vw, 4rem)', fontFamily: 'Sora', margin: '1rem 0' }}>Many communities still lack access to safe sanitation facilities.</h2>
           <p style={{ fontSize: '1.25rem', color: '#9ca3af' }}>This leads to health crises, environmental degradation, and a profound loss of dignity.</p>
         </motion.div>

@@ -8,9 +8,11 @@ import TechInfographic from '@/components/TechInfographic';
 import Gallery from '@/components/Gallery';
 import WhyPartner from '@/components/WhyPartner';
 import FeaturedProject from '@/components/FeaturedProject';
+import Testimonials from '@/components/Testimonials';
 import MeetFounder from '@/components/MeetFounder';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import FloatingCTA from '@/components/FloatingCTA';
 
 export default function Home() {
   return (
@@ -25,9 +27,11 @@ export default function Home() {
       <Gallery />
       <WhyPartner />
       <FeaturedProject />
+      <Testimonials />
       <MeetFounder />
       <Contact />
       <Footer />
+      <FloatingCTA />
     </main>
   );
 }

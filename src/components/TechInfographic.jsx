@@ -25,7 +25,7 @@ export default function TechInfographic() {
 
         <div style={{ position: 'relative' }}>
           {/* Animated SVG Line */}
-          <svg style={{ position: 'absolute', left: '2.5rem', top: 0, height: '100%', width: '4px', overflow: 'visible', zIndex: 0 }}>
+          <svg className="timeline-svg">
             <motion.line
               x1="2" y1="0" x2="2" y2="100%"
               stroke="var(--accent-green)"
@@ -45,28 +45,18 @@ export default function TechInfographic() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
-                style={{ display: 'flex', alignItems: 'center', gap: '2.5rem', position: 'relative', zIndex: 1, flexWrap: 'wrap' }}
+                className="timeline-item"
               >
                 {/* Node */}
                 <motion.div 
                   whileHover={{ scale: 1.1, backgroundColor: 'var(--accent-green)', color: 'var(--primary-green)' }}
-                  style={{ 
-                    width: '5rem', height: '5rem', 
-                    borderRadius: '50%', 
-                    backgroundColor: 'var(--primary-green)',
-                    border: '4px solid var(--accent-green)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    color: 'var(--white)',
-                    boxShadow: '0 0 20px rgba(167, 217, 72, 0.3)',
-                    flexShrink: 0,
-                    transition: 'all 0.3s ease'
-                  }}
+                  className="timeline-node"
                 >
                   <step.icon size={32} />
                 </motion.div>
 
                 {/* Content */}
-                <div style={{ backgroundColor: 'rgba(255,255,255,0.05)', padding: '2rem', borderRadius: '1rem', flex: 1, border: '1px solid rgba(255,255,255,0.1)' }}>
+                <div className="timeline-content">
                   <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', fontFamily: 'Sora', color: 'var(--accent-green)' }}>{step.title}</h3>
                   <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, fontSize: '1.125rem' }}>{step.desc}</p>
                 </div>

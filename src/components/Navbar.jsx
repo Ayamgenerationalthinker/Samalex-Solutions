@@ -39,7 +39,7 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
         >
-          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={140} height={140} style={{ height: 'clamp(80px, 15vw, 140px)', width: 'auto', borderRadius: '50%', objectFit: 'contain', background: '#fff', padding: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
+          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={140} height={140} style={{ height: 'clamp(80px, 15vw, 140px)', width: 'auto', borderRadius: '8px', objectFit: 'contain', background: '#fff', padding: '4px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)' }} />
           <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: 'clamp(1.4rem, 6vw, 2.2rem)', fontWeight: 'bold' }}>
             Samalex Solutions
           </span>

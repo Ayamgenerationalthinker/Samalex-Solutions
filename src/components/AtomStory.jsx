@@ -5,9 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 
 const steps = [
-  { id: '01', title: 'Registration', desc: 'Residents begin the process by registering for the Affordable Toilet Ownership Model.', image: '/images/atom-construction.jpeg' },
+  { id: '01', title: 'Registration', desc: 'Residents begin the process by registering for the Affordable Toilet Ownership Model.', image: '/images/atom-registration.jpeg' },
   { id: '02', title: 'Inspection', desc: 'Our team assesses the site and identifies the most suitable sanitation solution.', image: '/images/atom-inspection.jpeg' },
-  { id: '03', title: 'Construction', desc: 'The sanitation facility is professionally constructed and installed.', image: '/images/atom-registration.jpeg' },
+  { id: '03', title: 'Construction', desc: 'The sanitation facility is professionally constructed and installed.', image: '/images/atom-construction.jpeg' },
   { id: '04', title: 'Education & Handover', desc: 'Users receive training on proper usage, hygiene practices, and maintenance.', image: '/images/atom-handover.jpeg' },
   { id: '05', title: 'Payment', desc: 'Flexible payment options support sustainable toilet ownership.', image: '/images/atom-payment.jpeg' },
   { id: '06', title: 'Joy In Toilet', desc: 'Families enjoy a clean, safe, and dignified sanitation experience.', image: '/images/atom-success.jpeg' }
