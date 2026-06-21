@@ -2,64 +2,29 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { ExternalLink, Mail } from 'lucide-react';
+import { User } from 'lucide-react';
 
+// Only the CEO has real data — rest are placeholders
 const staffMembers = [
   {
+    isCEO: true,
     name: 'Samuel Gyabah',
     role: 'Founder & CEO',
     image: '/images/CEO.jpg',
     bio: 'Pioneering social entrepreneur driving sanitation impact across Ghana with over a decade of experience.',
-    linkedin: '#',
-    email: 'samalexsolution24@gmail.com',
   },
-  {
-    name: 'Operations Lead',
-    role: 'Field Operations Manager',
-    image: '/images/1.jpg',
-    bio: 'Coordinates on-ground project delivery, community engagement, and field team management.',
-    linkedin: '#',
-    email: 'samalexsolution24@gmail.com',
-  },
-  {
-    name: 'Technical Expert',
-    role: 'Biodigester Engineer',
-    image: '/images/2.jpg',
-    bio: 'Designs and installs our award-winning biodigester systems with precision and environmental care.',
-    linkedin: '#',
-    email: 'samalexsolution24@gmail.com',
-  },
-  {
-    name: 'Community Officer',
-    role: 'WASH Education Coordinator',
-    image: '/images/3.jpg',
-    bio: 'Leads hygiene education campaigns, empowering communities with life-changing WASH knowledge.',
-    linkedin: '#',
-    email: 'samalexsolution24@gmail.com',
-  },
-  {
-    name: 'Finance Officer',
-    role: 'Finance & Administration',
-    image: '/images/4.jpg',
-    bio: 'Manages financial planning, reporting, and administration to keep Samalex running smoothly.',
-    linkedin: '#',
-    email: 'samalexsolution24@gmail.com',
-  },
-  {
-    name: 'Project Coordinator',
-    role: 'Partnerships & Projects',
-    image: '/images/5.jpg',
-    bio: 'Bridges community needs with NGO partnerships, expanding Samalex\'s reach and impact.',
-    linkedin: '#',
-    email: 'samalexsolution24@gmail.com',
-  },
+  { isCEO: false },
+  { isCEO: false },
+  { isCEO: false },
+  { isCEO: false },
+  { isCEO: false },
 ];
 
 const containerVariants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
-    transition: { staggerChildren: 0.12 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -71,11 +36,12 @@ const cardVariants = {
 export default function Staff() {
   return (
     <section id="team" className="section-padding" style={{ backgroundColor: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
-      {/* Background decorative elements */}
-      <div style={{ position: 'absolute', top: '-5%', right: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(55, 179, 74, 0.08) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
-      <div style={{ position: 'absolute', bottom: '-5%', left: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(212, 244, 40, 0.06) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
+      {/* Background decorative blobs */}
+      <div style={{ position: 'absolute', top: '-5%', right: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(55, 179, 74, 0.07) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
+      <div style={{ position: 'absolute', bottom: '-5%', left: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(212, 244, 40, 0.05) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
+        {/* Header */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -93,6 +59,7 @@ export default function Staff() {
           </motion.div>
         </div>
 
+        {/* Grid */}
         <motion.div
           className="staff-grid"
           variants={containerVariants}
@@ -100,78 +67,65 @@ export default function Staff() {
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
         >
-          {staffMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              variants={cardVariants}
-              whileHover={{ y: -10, boxShadow: '0 28px 60px rgba(4, 57, 28, 0.15)' }}
-              className="staff-card"
-            >
-              {/* Image */}
-              <div className="staff-img-wrapper">
-                <Image
-                  src={member.image}
-                  alt={member.name}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  sizes="(max-width: 600px) 90vw, (max-width: 992px) 45vw, 30vw"
-                />
-                {/* Green overlay on hover */}
-                <div className="staff-img-overlay" />
-              </div>
-
-              {/* Info */}
-              <div style={{ padding: '1.75rem' }}>
-                <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', color: 'var(--primary-green)', marginBottom: '0.25rem' }}>
-                  {member.name}
-                </h3>
-                <p style={{ fontSize: '0.875rem', color: 'var(--secondary-green)', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '1rem' }}>
-                  {member.role}
-                </p>
-                <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.6, marginBottom: '1.5rem' }}>
-                  {member.bio}
-                </p>
-
-                {/* Social Links */}
-                <div style={{ display: 'flex', gap: '0.75rem' }}>
-                  <a
-                    href={`mailto:${member.email}`}
-                    aria-label={`Email ${member.name}`}
-                    style={{
-                      width: '38px', height: '38px',
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--bg-light)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--primary-green)',
-                      transition: 'all 0.3s ease',
-                      border: '1px solid rgba(4, 57, 28, 0.15)'
-                    }}
-                    onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--primary-green)'; e.currentTarget.style.color = 'var(--white)'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-light)'; e.currentTarget.style.color = 'var(--primary-green)'; }}
-                  >
-                    <Mail size={16} />
-                  </a>
-                  <a
-                    href={member.linkedin}
-                    aria-label={`LinkedIn profile of ${member.name}`}
-                    style={{
-                      width: '38px', height: '38px',
-                      borderRadius: '50%',
-                      backgroundColor: 'var(--bg-light)',
-                      display: 'flex', alignItems: 'center', justifyContent: 'center',
-                      color: 'var(--primary-green)',
-                      transition: 'all 0.3s ease',
-                      border: '1px solid rgba(4, 57, 28, 0.15)'
-                    }}
-                    onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--primary-green)'; e.currentTarget.style.color = 'var(--white)'; }}
-                    onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-light)'; e.currentTarget.style.color = 'var(--primary-green)'; }}
-                  >
-                    <ExternalLink size={16} />
-                  </a>
+          {staffMembers.map((member, index) =>
+            member.isCEO ? (
+              /* ── CEO card ── */
+              <motion.div key={index} variants={cardVariants} whileHover={{ y: -8, boxShadow: '0 28px 60px rgba(4, 57, 28, 0.15)' }} className="staff-card">
+                {/* Real photo */}
+                <div className="staff-img-wrapper">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    sizes="(max-width: 600px) 90vw, (max-width: 992px) 45vw, 30vw"
+                  />
+                  <div className="staff-img-overlay" />
                 </div>
-              </div>
-            </motion.div>
-          ))}
+
+                {/* Info */}
+                <div style={{ padding: '1.75rem' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', color: 'var(--primary-green)', marginBottom: '0.25rem' }}>
+                    {member.name}
+                  </h3>
+                  <p style={{ fontSize: '0.8rem', color: 'var(--secondary-green)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '0.875rem' }}>
+                    {member.role}
+                  </p>
+                  <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.6 }}>
+                    {member.bio}
+                  </p>
+                </div>
+              </motion.div>
+            ) : (
+              /* ── Placeholder card ── */
+              <motion.div key={index} variants={cardVariants} className="staff-card staff-placeholder">
+                {/* Silhouette avatar */}
+                <div className="staff-img-wrapper" style={{ background: 'linear-gradient(135deg, #e8f5e0 0%, #d0eccc 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{
+                    width: '90px', height: '90px',
+                    borderRadius: '50%',
+                    background: 'rgba(4, 57, 28, 0.10)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center'
+                  }}>
+                    <User size={44} color="rgba(4, 57, 28, 0.3)" strokeWidth={1.5} />
+                  </div>
+                </div>
+
+                {/* Placeholder shimmer lines */}
+                <div style={{ padding: '1.75rem' }}>
+                  <div style={{ height: '14px', borderRadius: '8px', background: 'rgba(4, 57, 28, 0.08)', marginBottom: '0.6rem', width: '60%' }} />
+                  <div style={{ height: '10px', borderRadius: '8px', background: 'rgba(4, 57, 28, 0.05)', marginBottom: '1.25rem', width: '40%' }} />
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(4, 57, 28, 0.05)', width: '100%' }} />
+                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(4, 57, 28, 0.05)', width: '80%' }} />
+                  </div>
+                  <div style={{ marginTop: '1.25rem', display: 'inline-block', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px dashed rgba(4, 57, 28, 0.2)', fontSize: '0.75rem', color: 'rgba(4, 57, 28, 0.35)', fontStyle: 'italic' }}>
+                    Coming Soon
+                  </div>
+                </div>
+              </motion.div>
+            )
+          )}
         </motion.div>
       </div>
     </section>
