@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Linkedin, Mail } from 'lucide-react';
+import { ExternalLink, Mail } from 'lucide-react';
 
 const staffMembers = [
   {
@@ -166,7 +166,7 @@ export default function Staff() {
                     onMouseOver={(e) => { e.currentTarget.style.backgroundColor = 'var(--primary-green)'; e.currentTarget.style.color = 'var(--white)'; }}
                     onMouseOut={(e) => { e.currentTarget.style.backgroundColor = 'var(--bg-light)'; e.currentTarget.style.color = 'var(--primary-green)'; }}
                   >
-                    <Linkedin size={16} />
+                    <ExternalLink size={16} />
                   </a>
                 </div>
               </div>
