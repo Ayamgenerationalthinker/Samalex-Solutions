@@ -1,24 +1,10 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { User } from 'lucide-react';
 
-// Only the CEO has real data — rest are placeholders
-const staffMembers = [
-  {
-    isCEO: true,
-    name: 'Samuel Gyabah',
-    role: 'Founder & CEO',
-    image: '/images/CEO.jpg',
-    bio: 'Pioneering social entrepreneur driving sanitation impact across Ghana with over a decade of experience.',
-  },
-  { isCEO: false },
-  { isCEO: false },
-  { isCEO: false },
-  { isCEO: false },
-  { isCEO: false },
-];
+// All cards are placeholders until staff info is ready
+const PLACEHOLDER_COUNT = 6;
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -67,36 +53,7 @@ export default function Staff() {
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
         >
-          {staffMembers.map((member, index) =>
-            member.isCEO ? (
-              /* ── CEO card ── */
-              <motion.div key={index} variants={cardVariants} whileHover={{ y: -8, boxShadow: '0 28px 60px rgba(4, 57, 28, 0.15)' }} className="staff-card">
-                {/* Real photo */}
-                <div className="staff-img-wrapper">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    style={{ objectFit: 'cover' }}
-                    sizes="(max-width: 600px) 90vw, (max-width: 992px) 45vw, 30vw"
-                  />
-                  <div className="staff-img-overlay" />
-                </div>
-
-                {/* Info */}
-                <div style={{ padding: '1.75rem' }}>
-                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', color: 'var(--primary-green)', marginBottom: '0.25rem' }}>
-                    {member.name}
-                  </h3>
-                  <p style={{ fontSize: '0.8rem', color: 'var(--secondary-green)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.5px', marginBottom: '0.875rem' }}>
-                    {member.role}
-                  </p>
-                  <p style={{ fontSize: '0.95rem', color: '#6b7280', lineHeight: 1.6 }}>
-                    {member.bio}
-                  </p>
-                </div>
-              </motion.div>
-            ) : (
+          {Array.from({ length: PLACEHOLDER_COUNT }).map((_, index) => (
               /* ── Placeholder card ── */
               <motion.div key={index} variants={cardVariants} className="staff-card staff-placeholder">
                 {/* Silhouette avatar */}
@@ -124,8 +81,7 @@ export default function Staff() {
                   </div>
                 </div>
               </motion.div>
-            )
-          )}
+          ))}
         </motion.div>
       </div>
     </section>
