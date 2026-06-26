@@ -65,8 +65,6 @@ export default function FounderPage() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     style={{ color: '#4b5563', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}
-                    onMouseOver={(e) => e.target.style.color = 'var(--primary-green)'}
-                    onMouseOut={(e) => e.target.style.color = '#4b5563'}
                   >
                     🔗 Samuel Gyabah Wins Viasat-1 Maiden Game Changer Challenge
                   </a>
@@ -77,8 +75,6 @@ export default function FounderPage() {
                     target="_blank" 
                     rel="noopener noreferrer"
                     style={{ color: '#4b5563', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}
-                    onMouseOver={(e) => e.target.style.color = 'var(--primary-green)'}
-                    onMouseOut={(e) => e.target.style.color = '#4b5563'}
                   >
                     🔗 The Man Making Money From Toilet In Ghana
                   </a>
