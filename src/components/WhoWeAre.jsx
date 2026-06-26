@@ -19,10 +19,16 @@ export default function WhoWeAre() {
           <h2 className="section-title">Who We Are</h2>
           <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--secondary-green)', marginBottom: '2rem', borderRadius: '2px' }} />
           <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4b5563', marginBottom: '1.5rem' }}>
-            Samalex Solutions is a Ghanaian sanitation enterprise dedicated to improving access to safe and sustainable sanitation through innovative toilet ownership programs, biodigester technology, community engagement, and hygiene education.
+            Samalex Solutions is a sanitation-based NGO whose main aim is to provide bio-digester toilets and sanitation to households, schools and other institutions. The passion of Samalex Solutions is to provide affordable, convenient and odorless bio-digester toilets and also conduct sanitation and hygiene education in order to improve and sustain good sanitation and hygiene practices among communities in Ghana and beyond.
+          </p>
+          <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4b5563', marginBottom: '1.5rem' }}>
+            The organization is registered as a private voluntary Not-for-profit organization with registration number CG116342014 that meets all Ministry of Sanitation and Water Resources approved standards for bio-digesters.
+          </p>
+          <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4b5563', marginBottom: '1.5rem' }}>
+            Samalex solutions can boast of building over 11,000 toilets for schools and households and has impacted over 1,000,000 people through our sanitation and hygiene education programmes.
           </p>
           <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: '#4b5563' }}>
-            We bridge the gap between affordable housing and modern sanitation, ensuring dignity, health, and environmental sustainability for every community we serve.
+            In 2016 we joined the Gama project which provided subsidised toilets and built over 9,000 toilets. The project folded up in Accra about 3 years ago. After the GAMA, we saw an increase in the demand for toilet but the major challenge we noticed is the lack of funds by household to pay for the upfront cost to acquire a toilet facility.
           </p>
         </motion.div>
 

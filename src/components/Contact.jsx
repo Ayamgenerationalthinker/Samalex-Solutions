@@ -33,7 +33,7 @@ export default function Contact() {
                 <div style={{ color: 'var(--primary-green)' }}><Phone size={24} /></div>
                 <div>
                   <h4 style={{ fontSize: '1.125rem', color: 'var(--text-dark)', marginBottom: '0.25rem' }}>Phone</h4>
-                  <p style={{ color: '#6b7280' }}>0243673937 <br/> 0244079924</p>
+                  <p style={{ color: '#6b7280' }}>0557952992</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>

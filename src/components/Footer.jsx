@@ -27,6 +27,7 @@ export default function Footer() {
             <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
               <li><a href="mailto:samalexsolution24@gmail.com" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Email Us</a></li>
               <li><a href="https://linkedin.com/company/samalex-solutions" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>LinkedIn</a></li>
+              <li><a href="https://web.facebook.com/samalexsolutions1/" target="_blank" rel="noopener noreferrer" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Facebook</a></li>
             </ul>
           </div>
         </div>
