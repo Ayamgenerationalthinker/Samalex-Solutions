@@ -14,10 +14,10 @@ export default function WhoWeAre() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.8 }}
-          style={{ position: 'relative', zIndex: 2 }}
+          style={{ position: 'relative', zIndex: 2, background: 'rgba(27, 75, 53, 0.05)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(27, 75, 53, 0.1)', padding: '3rem', borderRadius: '1.5rem', boxShadow: '0 20px 40px rgba(0,0,0,0.05)' }}
         >
           <h2 className="section-title">Who We Are</h2>
-          <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--secondary-green)', marginBottom: '2rem', borderRadius: '2px' }} />
+          <div style={{ width: '60px', height: '4px', backgroundColor: 'var(--primary-green)', marginBottom: '2rem', borderRadius: '2px' }} />
           <p style={{ fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--button-green)', marginBottom: '1.5rem' }}>
             Samalex Solutions is a sanitation-based NGO whose main aim is to provide bio-digester toilets and sanitation to households, schools and other institutions. The passion of Samalex Solutions is to provide affordable, convenient and odorless bio-digester toilets and also conduct sanitation and hygiene education in order to improve and sustain good sanitation and hygiene practices among communities in Ghana and beyond.
           </p>

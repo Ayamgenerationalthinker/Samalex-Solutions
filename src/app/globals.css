@@ -253,11 +253,13 @@ a {
 }
 
 .staff-card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 1.25rem;
   overflow: hidden;
-  border: 1px solid rgba(27, 75, 53, 0.08);
-  box-shadow: 0 4px 20px rgba(27, 75, 53, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.35s ease, transform 0.35s ease;
   cursor: pointer;
 }

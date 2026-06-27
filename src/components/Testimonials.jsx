@@ -22,14 +22,23 @@ export default function Testimonials() {
   }, [isPaused]);
 
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--white)', overflow: 'hidden' }}>
+    <section className="section-padding" style={{ backgroundColor: 'var(--button-green)', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
-        <h2 className="section-title">What People Say</h2>
+        <h2 className="section-title" style={{ color: 'var(--primary-green)' }}>What People Say</h2>
         
         <div 
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
           className="testimonials-slider"
+          style={{
+            background: 'rgba(255, 255, 255, 0.05)',
+            backdropFilter: 'blur(12px)',
+            WebkitBackdropFilter: 'blur(12px)',
+            border: '1px solid rgba(255, 255, 255, 0.2)',
+            borderRadius: '1.5rem',
+            padding: '3rem',
+            boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
+          }}
         >
           <AnimatePresence mode="wait">
             <motion.div
@@ -40,12 +49,12 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
             >
-              <p className="testimonial-quote">
+              <p className="testimonial-quote" style={{ color: 'var(--white)' }}>
                 "{testimonials[currentIndex].quote}"
               </p>
               <div>
                 <h4 style={{ fontSize: '1.125rem', color: 'var(--primary-green)', fontWeight: 600 }}>{testimonials[currentIndex].author}</h4>
-                <span style={{ color: 'var(--button-green)', fontSize: '0.875rem' }}>{testimonials[currentIndex].location}</span>
+                <span style={{ color: 'var(--white)', fontSize: '0.875rem' }}>{testimonials[currentIndex].location}</span>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -61,7 +70,7 @@ export default function Testimonials() {
                 width: index === currentIndex ? '24px' : '8px',
                 height: '8px',
                 borderRadius: '4px',
-                backgroundColor: index === currentIndex ? 'var(--primary-green)' : 'var(--primary-green)',
+                backgroundColor: index === currentIndex ? 'var(--primary-green)' : 'rgba(255,255,255,0.3)',
                 border: 'none',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer'

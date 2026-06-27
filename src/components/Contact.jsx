@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--white)' }}>
+    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--primary-green)' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem' }}>
           
@@ -16,31 +16,31 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title">Get In Touch</h2>
-            <p style={{ color: 'var(--button-green)', fontSize: '1.125rem', marginBottom: '3rem', lineHeight: 1.6 }}>
+            <h2 className="section-title" style={{ color: 'var(--button-green)' }}>Get In Touch</h2>
+            <p style={{ color: 'var(--white)', fontSize: '1.125rem', marginBottom: '3rem', lineHeight: 1.6 }}>
               Ready to transform sanitation in your community? Contact us today to discuss partnerships, projects, or our ATOM program.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--primary-green)' }}><MapPin size={24} /></div>
+                <div style={{ color: 'var(--white)' }}><MapPin size={24} /></div>
                 <div>
-                  <h4 style={{ fontSize: '1.125rem', color: 'var(--text-dark)', marginBottom: '0.25rem' }}>Location</h4>
-                  <p style={{ color: 'var(--button-green)' }}>Presby Road, Pokuase, Ga North, Ghana</p>
+                  <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '0.25rem' }}>Location</h4>
+                  <p style={{ color: 'var(--white)' }}>Presby Road, Pokuase, Ga North, Ghana</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--primary-green)' }}><Phone size={24} /></div>
+                <div style={{ color: 'var(--white)' }}><Phone size={24} /></div>
                 <div>
-                  <h4 style={{ fontSize: '1.125rem', color: 'var(--text-dark)', marginBottom: '0.25rem' }}>Phone</h4>
-                  <p style={{ color: 'var(--button-green)' }}>0557952992</p>
+                  <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '0.25rem' }}>Phone</h4>
+                  <p style={{ color: 'var(--white)' }}>0557952992</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--primary-green)' }}><Mail size={24} /></div>
+                <div style={{ color: 'var(--white)' }}><Mail size={24} /></div>
                 <div>
-                  <h4 style={{ fontSize: '1.125rem', color: 'var(--text-dark)', marginBottom: '0.25rem' }}>Email</h4>
-                  <p style={{ color: 'var(--button-green)' }}>samalexsolution24@gmail.com</p>
+                  <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '0.25rem' }}>Email</h4>
+                  <p style={{ color: 'var(--white)' }}>samalexsolution24@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="glass-panel"
-            style={{ backgroundColor: 'var(--white)' }}
+            style={{ background: 'rgba(255, 255, 255, 0.15)', backdropFilter: 'blur(12px)', WebkitBackdropFilter: 'blur(12px)', border: '1px solid rgba(255, 255, 255, 0.3)', padding: '3rem', borderRadius: '1.5rem', boxShadow: '0 20px 40px rgba(0, 0, 0, 0.15)' }}
           >
             <form action="https://formsubmit.co/samalexsolution24@gmail.com" method="POST" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               {/* FormSubmit Config */}
@@ -65,22 +65,22 @@ export default function Contact() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--button-green)' }}>Name</label>
-                  <input type="text" name="name" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none' }} />
+                  <input type="text" name="name" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none', backgroundColor: 'var(--white)' }} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--button-green)' }}>Organization</label>
-                  <input type="text" name="organization" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none' }} />
+                  <input type="text" name="organization" style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none', backgroundColor: 'var(--white)' }} />
                 </div>
               </div>
 
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--button-green)' }}>Email</label>
-                  <input type="email" name="email" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none' }} />
+                  <input type="email" name="email" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none', backgroundColor: 'var(--white)' }} />
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--button-green)' }}>Phone</label>
-                  <input type="tel" name="phone" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none' }} />
+                  <input type="tel" name="phone" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none', backgroundColor: 'var(--white)' }} />
                 </div>
               </div>
 
@@ -97,7 +97,7 @@ export default function Contact() {
 
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 <label style={{ fontSize: '0.875rem', fontWeight: 500, color: 'var(--button-green)' }}>Message</label>
-                <textarea name="message" rows="4" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none', resize: 'vertical' }}></textarea>
+                <textarea name="message" rows="4" required style={{ padding: '0.75rem', borderRadius: '0.5rem', border: '1px solid var(--primary-green)', outline: 'none', resize: 'vertical', backgroundColor: 'var(--white)' }}></textarea>
               </div>
 
               <button type="submit" className="btn-primary" style={{ width: '100%', marginTop: '1rem' }}>Send Message</button>
