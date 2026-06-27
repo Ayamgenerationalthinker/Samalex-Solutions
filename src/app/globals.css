@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap');
 
 :root {
-  --primary-green: #04391C; /* Dark green from text outlines and bottom bar */
-  --secondary-green: #37B34A; /* Vibrant lime green from SAMALEX text */
+  --primary-green: #1B4B35; /* Dark green from text outlines and bottom bar */
+  --secondary-green: #82C341; /* Vibrant lime green from SAMALEX text */
   --accent-green: #D4F428; /* Yellow-green accent from bottom glow */
   --bg-light: #F0F9ED; /* Very light green tinted background */
-  --text-dark: #04391C; /* Dark green for text */
+  --text-dark: #1B4B35; /* Dark green for text */
   --white: #FFFFFF;
   --navbar-height: 80px;
 }
@@ -258,8 +258,8 @@ a {
   background: var(--white);
   border-radius: 1.25rem;
   overflow: hidden;
-  border: 1px solid rgba(4, 57, 28, 0.08);
-  box-shadow: 0 4px 20px rgba(4, 57, 28, 0.06);
+  border: 1px solid rgba(27, 75, 53, 0.08);
+  box-shadow: 0 4px 20px rgba(27, 75, 53, 0.06);
   transition: box-shadow 0.35s ease, transform 0.35s ease;
   cursor: pointer;
 }
@@ -274,7 +274,7 @@ a {
 .staff-img-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(4, 57, 28, 0.6) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(27, 75, 53, 0.6) 0%, transparent 60%);
   opacity: 0;
   transition: opacity 0.35s ease;
 }
