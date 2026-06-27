@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: 'var(--primary-green)', color: 'var(--white)', padding: '4rem 0 2rem 0' }}>
+    <footer style={{ backgroundColor: 'var(--button-green)', color: 'var(--white)', padding: '4rem 0 2rem 0' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '3rem', marginBottom: '4rem' }}>
           
