@@ -1,33 +1,81 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { CheckCircle2 } from 'lucide-react';
 
+const slides = [
+  {
+    image: '/images/toilet.png',
+    title1: 'Affordable Sanitation.',
+    title2: 'Dignified Living.',
+    desc: 'Transforming homes, schools, and communities through sustainable sanitation solutions and innovative toilet ownership programs.',
+    primaryBtnText: 'Partner With Us',
+    primaryBtnHref: '#partner',
+    secondaryBtnText: 'Request A Consultation',
+    secondaryBtnHref: '#contact'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80',
+    title1: 'Eco-Friendly Solutions.',
+    title2: 'Sustainable Future.',
+    desc: 'Samalex Solutions engineers modern, odor-free bio-digesters that protect the environment and promote a healthier Ghana.',
+    primaryBtnText: 'View Our Solutions',
+    primaryBtnHref: '#solutions',
+    secondaryBtnText: 'Learn More',
+    secondaryBtnHref: '#about'
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1473643213032-41ce101030e2?auto=format&fit=crop&w=1200&q=80',
+    title1: 'Expert Installation.',
+    title2: 'Guaranteed Quality.',
+    desc: 'With over 11,000 toilets built, Samalex Solutions is the trusted name in bio-digester technology and hygiene education.',
+    primaryBtnText: 'See Our Impact',
+    primaryBtnHref: '#impact',
+    secondaryBtnText: 'Contact Us',
+    secondaryBtnHref: '#contact'
+  }
+];
+
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % slides.length);
+    }, 6000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section style={{ position: 'relative', minHeight: '100vh', width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
       
       {/* Animated Background Image */}
-      <motion.div 
-        animate={{ scale: [1, 1.1, 1] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}
-      >
-        <Image 
-          src="/images/toilet.png"
-          alt="Modern Eco-friendly Toilet Background"
-          fill
-          style={{ objectFit: 'cover', objectPosition: 'center' }}
-          priority
-          sizes="100vw"
-        />
-      </motion.div>
+      <AnimatePresence mode="wait">
+        <motion.div 
+          key={currentIndex}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, scale: [1, 1.05] }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5, scale: { duration: 10, repeat: Infinity, repeatType: 'reverse', ease: "linear" } }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}
+        >
+          <Image 
+            src={slides[currentIndex].image}
+            alt="Samalex Solutions Background"
+            fill
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
+            priority
+            sizes="100vw"
+          />
+        </motion.div>
+      </AnimatePresence>
 
       {/* Light Overlay to ensure text readability */}
       <div style={{
         position: 'absolute', inset: 0,
-        background: 'linear-gradient(to right, rgba(240, 249, 237, 0.9) 0%, rgba(240, 249, 237, 0.7) 40%, rgba(240, 249, 237, 0.1) 100%)',
+        background: 'linear-gradient(to right, rgba(240, 249, 237, 0.95) 0%, rgba(240, 249, 237, 0.8) 40%, rgba(240, 249, 237, 0.2) 100%)',
         zIndex: 1
       }} />
 
@@ -46,35 +94,33 @@ export default function Hero() {
             </span>
           </motion.div>
 
-          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.1, marginBottom: '1.5rem', fontFamily: 'Sora', color: 'var(--text-dark)' }}>
-            <motion.span 
-              initial={{ y: '20px', opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.1 }}
-              style={{ display: 'block' }}
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6 }}
             >
-              Affordable Sanitation.
-            </motion.span>
-            <motion.span 
-              initial={{ y: '20px', opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }}
-              style={{ display: 'block' }}
-            >
-              <span style={{ color: 'var(--primary-green)' }}>Dignified Living.</span>
-            </motion.span>
-          </h1>
+              <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.1, marginBottom: '1.5rem', fontFamily: 'Sora', color: 'var(--text-dark)' }}>
+                <span style={{ display: 'block' }}>
+                  {slides[currentIndex].title1}
+                </span>
+                <span style={{ display: 'block' }}>
+                  <span style={{ color: 'var(--primary-green)' }}>{slides[currentIndex].title2}</span>
+                </span>
+              </h1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
-            style={{ fontSize: '1.125rem', marginBottom: '2.5rem', color: '#374151', lineHeight: 1.6 }}
-          >
-            Transforming homes, schools, and communities through sustainable sanitation solutions and innovative toilet ownership programs.
-          </motion.p>
+              <p style={{ fontSize: '1.125rem', marginBottom: '2.5rem', color: '#374151', lineHeight: 1.6 }}>
+                {slides[currentIndex].desc}
+              </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
-            style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
-          >
-            <a href="#partner" className="btn-primary">Partner With Us</a>
-            <a href="#contact" className="btn-secondary">Request A Consultation</a>
-          </motion.div>
+              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+                <a href={slides[currentIndex].primaryBtnHref} className="btn-primary">{slides[currentIndex].primaryBtnText}</a>
+                <a href={slides[currentIndex].secondaryBtnHref} className="btn-secondary">{slides[currentIndex].secondaryBtnText}</a>
+              </div>
+            </motion.div>
+          </AnimatePresence>
         </div>
 
       </div>
