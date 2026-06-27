@@ -8,8 +8,12 @@ export default function Hero() {
   return (
     <section style={{ position: 'relative', minHeight: '100vh', width: '100%', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
       
-      {/* Static Background Image */}
-      <div style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}>
+      {/* Animated Background Image */}
+      <motion.div 
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', zIndex: 0 }}
+      >
         <Image 
           src="/images/toilet.png"
           alt="Modern Eco-friendly Toilet Background"
@@ -18,7 +22,7 @@ export default function Hero() {
           priority
           sizes="100vw"
         />
-      </div>
+      </motion.div>
 
       {/* Light Overlay to ensure text readability */}
       <div style={{

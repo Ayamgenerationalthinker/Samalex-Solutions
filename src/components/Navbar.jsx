@@ -25,12 +25,11 @@ export default function Navbar() {
   return (
     <nav style={{ 
       position: 'fixed', width: '100%', zIndex: 100, 
-      background: scrolled ? 'rgba(15, 77, 47, 0.85)' : 'transparent',
-      backdropFilter: scrolled ? 'blur(16px)' : 'none',
-      WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-      borderBottom: scrolled ? '1px solid rgba(255,255,255,0.1)' : '1px solid transparent',
+      background: 'var(--primary-green)',
+      borderBottom: '1px solid rgba(0,0,0,0.1)',
       transition: 'all 0.3s ease',
-      padding: scrolled ? '0.5rem 0' : '1rem 0'
+      padding: scrolled ? '0.5rem 0' : '1rem 0',
+      boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.1)' : 'none'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <motion.div 
