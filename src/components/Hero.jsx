@@ -51,13 +51,13 @@ export default function Hero() {
               initial={{ y: '20px', opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.1 }}
               style={{ display: 'block' }}
             >
-              Ghana's Leading
+              Affordable Sanitation.
             </motion.span>
             <motion.span 
               initial={{ y: '20px', opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.2 }}
               style={{ display: 'block' }}
             >
-              <span style={{ color: 'var(--primary-green)' }}>Bio-Digester</span> Experts
+              <span style={{ color: 'var(--primary-green)' }}>Dignified Living.</span>
             </motion.span>
           </h1>
 
@@ -65,15 +65,15 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }}
             style={{ fontSize: '1.125rem', marginBottom: '2.5rem', color: '#374151', lineHeight: 1.6 }}
           >
-            Professional toilet solutions that are eco-friendly and cost-effective. We engineer modern sanitation systems that eliminate odors and frequent dislodging.
+            Transforming homes, schools, and communities through sustainable sanitation solutions and innovative toilet ownership programs.
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.4 }}
             style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
           >
-            <a href="#quote" className="btn-primary">Get a Free Quote</a>
-            <a href="#promo" className="btn-secondary">View Promo Offers</a>
+            <a href="#partner" className="btn-primary">Partner With Us</a>
+            <a href="#contact" className="btn-secondary">Request A Consultation</a>
           </motion.div>
         </div>
 
