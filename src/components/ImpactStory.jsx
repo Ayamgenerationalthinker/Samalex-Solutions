@@ -33,8 +33,8 @@ export default function ImpactStory() {
       {/* After Intervention */}
       <div style={{ position: 'relative', minHeight: '100vh', padding: '6rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'var(--white)', color: 'var(--text-dark)' }}>
         <Image 
-          src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1200&q=80"
-          alt="Happy children in a community after sanitation intervention"
+          src="/images/toilet.png"
+          alt="Modern toilet installation"
           fill
           style={{ objectFit: 'cover' }}
           sizes="100vw"

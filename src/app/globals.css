@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap');
 
 :root {
-  --primary-green: #1B4B35; /* Dark green from text outlines and bottom bar */
-  --secondary-green: #82C341; /* Vibrant lime green from SAMALEX text */
-  --accent-green: #D4F428; /* Yellow-green accent from bottom glow */
+  --primary-green: #82C341; /* Vibrant green for text highlights and accents */
+  --button-green: #1B4B35; /* Dark green for buttons and emphasis */
+  --accent-green: #D4F428; /* Yellow-green accent */
   --bg-light: #F0F9ED; /* Very light green tinted background */
   --text-dark: #1B4B35; /* Dark green for text */
   --white: #FFFFFF;
@@ -60,7 +60,7 @@ a {
    ============================================= */
 .btn-primary {
   display: inline-block;
-  background-color: var(--primary-green);
+  background-color: var(--button-green);
   color: var(--white);
   padding: 1rem 2.5rem;
   border-radius: 50px;
@@ -74,7 +74,7 @@ a {
 }
 
 .btn-primary:hover {
-  background-color: var(--secondary-green);
+  background-color: var(--primary-green);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(124, 194, 66, 0.3);
 }
@@ -82,11 +82,11 @@ a {
 .btn-secondary {
   display: inline-block;
   background-color: transparent;
-  color: var(--primary-green);
+  color: var(--button-green);
   padding: 1rem 2.5rem;
   border-radius: 50px;
   font-weight: 600;
-  border: 2px solid var(--primary-green);
+  border: 2px solid var(--button-green);
   transition: all 0.3s ease;
   cursor: pointer;
   text-decoration: none;
@@ -94,7 +94,7 @@ a {
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-green);
+  background-color: var(--button-green);
   color: var(--white);
 }
 
@@ -117,7 +117,7 @@ a {
 .section-title {
   font-size: clamp(1.75rem, 4vw, 3rem);
   font-family: 'Sora', sans-serif;
-  color: var(--primary-green);
+  color: var(--button-green);
   margin-bottom: 1rem;
   line-height: 1.2;
 }
