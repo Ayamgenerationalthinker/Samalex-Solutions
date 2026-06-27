@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+const MotionLink = motion(Link);
+
 export default function MeetFounder() {
   return (
     <section className="section-padding" style={{ position: 'relative', backgroundColor: 'var(--white)', color: 'var(--text-dark)', overflow: 'hidden' }}>
@@ -63,26 +65,25 @@ export default function MeetFounder() {
                 In 2013, he ditched his microfinance job and devoted full time to eradicating open defecation and promoting good sanitation practices among his people. He did this by building biodigester toilet facilities on subsidy for schools and individuals. His Sanitation armies set up in Junior High schools trained students to adopt good sanitation practices.
               </p>
 
-              <Link href="/founder" passHref>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  style={{
-                    display: 'inline-block',
-                    padding: '0.75rem 2rem',
-                    marginTop: '1rem',
-                    backgroundColor: 'var(--button-green)',
-                    color: 'var(--white)',
-                    fontWeight: 'bold',
-                    borderRadius: '2rem',
-                    textDecoration: 'none',
-                    textAlign: 'center',
-                    boxShadow: '0 4px 14px rgba(27, 75, 53, 0.2)'
-                  }}
-                >
-                  Read More
-                </motion.a>
-              </Link>
+              <MotionLink
+                href="/founder"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                style={{
+                  display: 'inline-block',
+                  padding: '0.75rem 2rem',
+                  marginTop: '1rem',
+                  backgroundColor: 'var(--button-green)',
+                  color: 'var(--white)',
+                  fontWeight: 'bold',
+                  borderRadius: '2rem',
+                  textDecoration: 'none',
+                  textAlign: 'center',
+                  boxShadow: '0 4px 14px rgba(27, 75, 53, 0.2)'
+                }}
+              >
+                Read More
+              </MotionLink>
             </div>
           </motion.div>
 

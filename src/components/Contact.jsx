@@ -60,7 +60,7 @@ export default function Contact() {
               <input type="hidden" name="_subject" value="New Partnership Inquiry - Samalex Solutions" />
               <input type="hidden" name="_autoresponse" value="Thank you for your interest in partnering with Samalex Solutions! We have received your inquiry and our team will review it and get back to you shortly. Together, we can make sustainable sanitation accessible to all." />
               <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_captcha" value="true" />
               
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.5rem' }}>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>

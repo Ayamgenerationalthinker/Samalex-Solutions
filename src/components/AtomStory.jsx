@@ -144,6 +144,18 @@ export default function AtomStory() {
           </div>
 
         </div>
+
+        {/* Call To Action */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ textAlign: 'center', marginTop: '4rem' }}
+        >
+          <a href="#contact" className="btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 3rem' }}>
+            Get Started With ATOM
+          </a>
+        </motion.div>
       </div>
     </section>
   );

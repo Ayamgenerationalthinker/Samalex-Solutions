@@ -19,6 +19,7 @@ export default function Footer() {
               <li><a href="#about" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>About Us</a></li>
               <li><a href="#solutions" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Our Solutions</a></li>
               <li><a href="#contact" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Contact</a></li>
+              <li><a href="/privacy" style={{ color: 'rgba(255,255,255,0.7)', textDecoration: 'none' }}>Privacy Policy</a></li>
             </ul>
           </div>
 

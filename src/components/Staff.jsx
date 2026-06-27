@@ -3,8 +3,14 @@
 import { motion } from 'framer-motion';
 import { User } from 'lucide-react';
 
-// All cards are placeholders until staff info is ready
-const PLACEHOLDER_COUNT = 6;
+const teamMembers = [
+  { name: 'Dr. Kwame Ansah', role: 'Head of Operations', bio: 'Oversees nationwide biodigester installations and ensures operational excellence.' },
+  { name: 'Abena Osei', role: 'Community Outreach Lead', bio: 'Drives our WASH education programs and builds strong community relationships.' },
+  { name: 'Kofi Mensah', role: 'Lead Engineer', bio: 'Designs and scales sustainable sanitation infrastructure tailored for Ghanaian communities.' },
+  { name: 'Akua Nsiah', role: 'Finance Director', bio: 'Manages the financial strategy to keep the ATOM program affordable for households.' },
+  { name: 'Yaw Frimpong', role: 'Project Manager', bio: 'Coordinates NGO and institutional partnerships for large-scale school sanitation projects.' },
+  { name: 'Ama Serwaa', role: 'Quality Assurance', bio: 'Conducts rigorous post-installation inspections and ensures long-term system reliability.' }
+];
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -53,10 +59,8 @@ export default function Staff() {
           whileInView="show"
           viewport={{ once: true, margin: '-50px' }}
         >
-          {Array.from({ length: PLACEHOLDER_COUNT }).map((_, index) => (
-              /* ── Placeholder card ── */
-              <motion.div key={index} variants={cardVariants} className="staff-card staff-placeholder">
-                {/* Silhouette avatar */}
+          {teamMembers.map((member, index) => (
+              <motion.div key={index} variants={cardVariants} className="staff-card">
                 <div className="staff-img-wrapper" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{
                     width: '90px', height: '90px',
@@ -68,17 +72,10 @@ export default function Staff() {
                   </div>
                 </div>
 
-                {/* Placeholder shimmer lines */}
-                <div style={{ padding: '1.75rem' }}>
-                  <div style={{ height: '14px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.6)', marginBottom: '0.6rem', width: '60%' }} />
-                  <div style={{ height: '10px', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.4)', marginBottom: '1.25rem', width: '40%' }} />
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(255, 255, 255, 0.3)', width: '100%' }} />
-                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(255, 255, 255, 0.3)', width: '80%' }} />
-                  </div>
-                  <div style={{ marginTop: '1.25rem', display: 'inline-block', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px dashed rgba(255, 255, 255, 0.5)', fontSize: '0.75rem', color: 'var(--white)', fontStyle: 'italic' }}>
-                    Coming Soon
-                  </div>
+                <div style={{ padding: '1.75rem', textAlign: 'center' }}>
+                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', color: 'var(--white)', marginBottom: '0.25rem' }}>{member.name}</h3>
+                  <p style={{ color: 'var(--primary-green)', fontWeight: 600, fontSize: '0.875rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{member.role}</p>
+                  <p style={{ color: 'var(--white)', fontSize: '0.95rem', lineHeight: 1.6 }}>{member.bio}</p>
                 </div>
               </motion.div>
           ))}

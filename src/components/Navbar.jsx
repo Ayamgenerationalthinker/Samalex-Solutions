@@ -78,7 +78,7 @@ export default function Navbar() {
           >
             <div style={{ display: 'flex', flexDirection: 'column', padding: '1rem 2rem 2rem 2rem', gap: '1.5rem' }}>
               {navLinks.map((link) => (
-                <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} style={{ color: 'var(--white)', fontSize: '1.125rem', fontWeight: 500 }}>
+                <a key={link.name} href={link.href} onClick={() => setIsOpen(false)} style={{ color: 'var(--white)', fontSize: '1.25rem', fontWeight: 500, display: 'block', padding: '0.75rem 0' }}>
                   {link.name}
                 </a>
               ))}
