@@ -25,7 +25,7 @@ export default function Navbar() {
   return (
     <nav style={{ 
       position: 'fixed', width: '100%', zIndex: 100, 
-      background: 'var(--primary-green)',
+      background: 'var(--button-green)',
       borderBottom: '1px solid rgba(0,0,0,0.1)',
       transition: 'all 0.3s ease',
       padding: scrolled ? '0.5rem 0' : '1rem 0',

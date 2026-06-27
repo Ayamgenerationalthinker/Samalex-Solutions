@@ -17,7 +17,7 @@ const slides = [
     secondaryBtnHref: '#contact'
   },
   {
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/slider2.png',
     title1: 'Eco-Friendly Solutions.',
     title2: 'Sustainable Future.',
     desc: 'Samalex Solutions engineers modern, odor-free bio-digesters that protect the environment and promote a healthier Ghana.',
@@ -27,7 +27,7 @@ const slides = [
     secondaryBtnHref: '#about'
   },
   {
-    image: 'https://images.unsplash.com/photo-1473643213032-41ce101030e2?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/slider3.png',
     title1: 'Expert Installation.',
     title2: 'Guaranteed Quality.',
     desc: 'With over 11,000 toilets built, Samalex Solutions is the trusted name in bio-digester technology and hygiene education.',
