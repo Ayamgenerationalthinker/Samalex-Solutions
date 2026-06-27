@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@400;600;700&display=swap');
 
 :root {
-  --primary-green: #1B4B35;
-  --button-green: #82C341;
+  --primary-green: #82C341;
+  --button-green: #1B4B35;
   --text-dark: #1B4B35;
   --white: #FFFFFF;
   --navbar-height: 80px;
@@ -74,7 +74,7 @@ a {
 .btn-primary:hover {
   background-color: var(--primary-green);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(27, 75, 53, 0.3);
+  box-shadow: 0 6px 20px rgba(130, 195, 65, 0.3);
 }
 
 .btn-secondary {
