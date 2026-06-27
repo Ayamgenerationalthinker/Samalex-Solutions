@@ -27,7 +27,7 @@ const cardVariants = {
 
 export default function Staff() {
   return (
-    <section id="team" className="section-padding" style={{ backgroundColor: 'var(--primary-green)', position: 'relative', overflow: 'hidden' }}>
+    <section id="team" className="section-padding" style={{ backgroundColor: 'var(--bg-light-green)', position: 'relative', overflow: 'hidden' }}>
       {/* Background decorative blobs */}
       <div style={{ position: 'absolute', top: '-5%', right: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(130, 195, 65, 0.07) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
       <div style={{ position: 'absolute', bottom: '-5%', left: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(130, 195, 65, 0.05) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
@@ -41,11 +41,11 @@ export default function Staff() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <span style={{ color: 'var(--white)', fontWeight: 600, letterSpacing: '2px', fontSize: '0.875rem', textTransform: 'uppercase' }}>
+            <span style={{ color: 'var(--primary-green)', fontWeight: 600, letterSpacing: '2px', fontSize: '0.875rem', textTransform: 'uppercase' }}>
               The People Behind Our Mission
             </span>
             <h2 className="section-title" style={{ marginTop: '0.75rem', color: 'var(--button-green)' }}>Meet Our Team</h2>
-            <p className="section-subtitle" style={{ margin: '1rem auto 0', color: 'var(--white)' }}>
+            <p className="section-subtitle" style={{ margin: '1rem auto 0', color: 'var(--button-green)' }}>
               Passionate professionals dedicated to transforming sanitation across Ghana — one community at a time.
             </p>
           </motion.div>
@@ -61,7 +61,7 @@ export default function Staff() {
         >
           {teamMembers.map((member, index) => (
               <motion.div key={index} variants={cardVariants} className="staff-card">
-                <div className="staff-img-wrapper" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.05) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="staff-img-wrapper" style={{ background: 'linear-gradient(135deg, rgba(130,195,65,0.2) 0%, rgba(27,75,53,0.1) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{
                     width: '90px', height: '90px',
                     borderRadius: '50%',
@@ -73,9 +73,9 @@ export default function Staff() {
                 </div>
 
                 <div style={{ padding: '1.75rem', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', color: 'var(--white)', marginBottom: '0.25rem' }}>{member.name}</h3>
+                  <h3 style={{ fontSize: '1.25rem', fontFamily: 'Sora', color: 'var(--button-green)', marginBottom: '0.25rem' }}>{member.name}</h3>
                   <p style={{ color: 'var(--primary-green)', fontWeight: 600, fontSize: '0.875rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '1px' }}>{member.role}</p>
-                  <p style={{ color: 'var(--white)', fontSize: '0.95rem', lineHeight: 1.6 }}>{member.bio}</p>
+                  <p style={{ color: 'var(--button-green)', fontSize: '0.95rem', lineHeight: 1.6 }}>{member.bio}</p>
                 </div>
               </motion.div>
           ))}

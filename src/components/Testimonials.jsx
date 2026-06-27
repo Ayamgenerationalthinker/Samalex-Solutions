@@ -22,9 +22,9 @@ export default function Testimonials() {
   }, [isPaused]);
 
   return (
-    <section className="section-padding" style={{ backgroundColor: 'var(--button-green)', overflow: 'hidden' }}>
+    <section className="section-padding" style={{ backgroundColor: 'var(--bg-light-green)', overflow: 'hidden' }}>
       <div className="container" style={{ textAlign: 'center', maxWidth: '800px' }}>
-        <h2 className="section-title" style={{ color: 'var(--primary-green)' }}>What People Say</h2>
+        <h2 className="section-title" style={{ color: 'var(--button-green)' }}>What People Say</h2>
         
         <div 
           onMouseEnter={() => setIsPaused(true)}
@@ -49,12 +49,12 @@ export default function Testimonials() {
               transition={{ duration: 0.5 }}
               style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}
             >
-              <p className="testimonial-quote" style={{ color: 'var(--white)' }}>
+              <p className="testimonial-quote" style={{ color: 'var(--button-green)' }}>
                 "{testimonials[currentIndex].quote}"
               </p>
               <div>
-                <h4 style={{ fontSize: '1.125rem', color: 'var(--primary-green)', fontWeight: 600 }}>{testimonials[currentIndex].author}</h4>
-                <span style={{ color: 'var(--white)', fontSize: '0.875rem' }}>{testimonials[currentIndex].location}</span>
+                <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', fontWeight: 600 }}>{testimonials[currentIndex].author}</h4>
+                <span style={{ color: 'var(--primary-green)', fontSize: '0.875rem' }}>{testimonials[currentIndex].location}</span>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -70,7 +70,7 @@ export default function Testimonials() {
                 width: index === currentIndex ? '24px' : '8px',
                 height: '8px',
                 borderRadius: '4px',
-                backgroundColor: index === currentIndex ? 'var(--primary-green)' : 'rgba(255,255,255,0.3)',
+                backgroundColor: index === currentIndex ? 'var(--button-green)' : 'rgba(27,75,53,0.2)',
                 border: 'none',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer'

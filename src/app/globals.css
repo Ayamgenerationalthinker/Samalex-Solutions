@@ -3,6 +3,7 @@
 :root {
   --primary-green: #82C341;
   --button-green: #1B4B35;
+  --bg-light-green: #EEF5EE;
   --text-dark: #1B4B35;
   --white: #FFFFFF;
   --navbar-height: 80px;
@@ -253,9 +254,7 @@ a {
 }
 
 .staff-card {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: var(--white);
   border-radius: 1.25rem;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.3);
