@@ -14,11 +14,11 @@ const partners = [
 
 export default function WhyPartner() {
   return (
-    <section id="partner" className="section-padding" style={{ backgroundColor: 'var(--white)' }}>
+    <section id="partner" className="section-padding" style={{ backgroundColor: 'var(--button-green)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <h2 className="section-title">Why NGOs & Institutions Partner With Samalex</h2>
-          <p className="section-subtitle" style={{ margin: '0 auto' }}>
+          <h2 className="section-title" style={{ color: 'var(--primary-green)' }}>Why NGOs & Institutions Partner With Samalex</h2>
+          <p className="section-subtitle" style={{ margin: '0 auto', color: 'var(--white)' }}>
             We bring local expertise, sustainable technology, and a proven implementation model.
           </p>
         </div>
@@ -31,12 +31,14 @@ export default function WhyPartner() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(27, 75, 53, 0.15)' }}
+              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(0, 0, 0, 0.3)' }}
               style={{
-                backgroundColor: 'var(--white)',
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(12px)',
+                WebkitBackdropFilter: 'blur(12px)',
                 padding: '3rem 2rem',
                 borderRadius: '1.5rem',
-                border: '1px solid rgba(27, 75, 53, 0.1)',
+                border: '1px solid rgba(255, 255, 255, 0.2)',
                 transition: 'all 0.3s ease'
               }}
             >
@@ -45,13 +47,13 @@ export default function WhyPartner() {
                 borderRadius: '1rem', 
                 backgroundColor: 'var(--primary-green)', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: 'var(--primary-green)',
+                color: 'var(--white)',
                 marginBottom: '1.5rem'
               }}>
                 <item.icon size={32} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'Sora', color: 'var(--primary-green)' }}>{item.title}</h3>
-              <p style={{ color: 'var(--button-green)', lineHeight: 1.6 }}>{item.desc}</p>
+              <p style={{ color: 'var(--white)', lineHeight: 1.6 }}>{item.desc}</p>
             </motion.div>
           ))}
         </div>
