@@ -6,7 +6,7 @@ export default function Footer() {
           
           {/* Brand */}
           <div style={{ gridColumn: 'span 2' }}>
-            <h3 style={{ fontSize: '1.5rem', fontFamily: 'Sora', marginBottom: '1rem', color: 'var(--accent-green)' }}>Samalex Solutions</h3>
+            <h3 style={{ fontSize: '1.5rem', fontFamily: 'Sora', marginBottom: '1rem', color: 'var(--primary-green)' }}>Samalex Solutions</h3>
             <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, maxWidth: '300px' }}>
               Your Lasting Solution. Improving access to safe, affordable, and sustainable sanitation in Ghana.
             </p>

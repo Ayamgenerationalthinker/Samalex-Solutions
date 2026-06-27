@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function FounderPage() {
   return (
-    <main style={{ backgroundColor: 'var(--bg-light)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <main style={{ backgroundColor: 'var(--white)', minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       <Navbar />
       
       <div style={{ paddingTop: '120px', flex: 1 }}>
         <div className="container" style={{ maxWidth: '900px', margin: '0 auto', paddingBottom: '4rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <div style={{ position: 'relative', width: '250px', height: '250px', margin: '0 auto 2rem auto', borderRadius: '50%', overflow: 'hidden', boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+            <div style={{ position: 'relative', width: '250px', height: '250px', margin: '0 auto 2rem auto', borderRadius: '50%', overflow: 'hidden', boxShadow: '0 10px 30px rgba(27, 75, 53,0.1)' }}>
               <Image 
                 src="/images/Sammy.jpg" 
                 alt="Samuel Gyabah - Founder & CEO" 
@@ -27,7 +27,7 @@ export default function FounderPage() {
             <p style={{ fontSize: '1.25rem', color: 'var(--primary-green)', fontWeight: 'bold', textTransform: 'uppercase', letterSpacing: '1px' }}>Founder & CEO</p>
           </div>
 
-          <div style={{ backgroundColor: 'var(--white)', padding: '3rem', borderRadius: '1.5rem', boxShadow: '0 10px 40px rgba(0,0,0,0.05)', fontSize: '1.125rem', lineHeight: 1.8, color: '#4b5563', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ backgroundColor: 'var(--white)', padding: '3rem', borderRadius: '1.5rem', boxShadow: '0 10px 40px rgba(27, 75, 53,0.05)', fontSize: '1.125rem', lineHeight: 1.8, color: 'var(--button-green)', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <p>
               Samuel Gyabah knew so well from being born and bred in Pokuase how lack of decent toilet facilities has led to poor sanitation practices and escalation in diseases such as cholera, typhoid, and diarrhoea in the Ga West Municipal Assembly. He knew too well how girls missed school while menstruating due to lack of decent toilets, because he sat in class with them.
             </p>
@@ -64,7 +64,7 @@ export default function FounderPage() {
                     href="https://www.modernghana.com/news/565787/samuel-gyabah-wins-viasat-1-maiden-game-changer-challenge.html" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style={{ color: '#4b5563', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}
+                    style={{ color: 'var(--button-green)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}
                   >
                     🔗 Samuel Gyabah Wins Viasat-1 Maiden Game Changer Challenge
                   </a>
@@ -74,7 +74,7 @@ export default function FounderPage() {
                     href="https://www.modernghana.com/lifestyle/10057/the-man-making-money-from-toilet-in-ghana.html" 
                     target="_blank" 
                     rel="noopener noreferrer"
-                    style={{ color: '#4b5563', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}
+                    style={{ color: 'var(--button-green)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 500 }}
                   >
                     🔗 The Man Making Money From Toilet In Ghana
                   </a>

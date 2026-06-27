@@ -40,7 +40,7 @@ export default function Gallery() {
                 borderRadius: '50px',
                 border: 'none',
                 backgroundColor: filter === cat ? 'var(--primary-green)' : '#f3f4f6',
-                color: filter === cat ? 'var(--white)' : '#4b5563',
+                color: filter === cat ? 'var(--white)' : 'var(--button-green)',
                 cursor: 'pointer',
                 fontWeight: 600,
                 transition: 'all 0.3s ease'
@@ -80,8 +80,8 @@ export default function Gallery() {
                   />
                 </motion.div>
                 {/* Overlay */}
-                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(15, 77, 47, 0.7)', opacity: 0, transition: 'opacity 0.3s ease', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }} className="overlay">
-                  <span style={{ color: 'var(--accent-green)', fontWeight: 'bold' }}>{item.category}</span>
+                <div style={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(27, 75, 53, 0.7)', opacity: 0, transition: 'opacity 0.3s ease', display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column' }} className="overlay">
+                  <span style={{ color: 'var(--primary-green)', fontWeight: 'bold' }}>{item.category}</span>
                   <h4 style={{ color: 'var(--white)', fontSize: '1.25rem' }}>{item.title}</h4>
                 </div>
               </motion.div>
@@ -102,7 +102,7 @@ export default function Gallery() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setSelectedImg(null)}
-              style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(0,0,0,0.9)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
+              style={{ position: 'fixed', inset: 0, backgroundColor: 'rgba(27, 75, 53,0.9)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem' }}
             >
               <button 
                 onClick={() => setSelectedImg(null)}
@@ -119,7 +119,7 @@ export default function Gallery() {
               />
               <div style={{ position: 'absolute', bottom: '2rem', color: 'white', textAlign: 'center' }}>
                 <h3 style={{ fontSize: '2rem' }}>{selectedImg.title}</h3>
-                <p style={{ color: 'var(--accent-green)' }}>{selectedImg.category}</p>
+                <p style={{ color: 'var(--primary-green)' }}>{selectedImg.category}</p>
               </div>
             </motion.div>
           )}

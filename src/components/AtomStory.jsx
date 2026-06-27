@@ -25,7 +25,7 @@ export default function AtomStory() {
   }, []);
 
   return (
-    <section id="solutions" className="section-padding" style={{ backgroundColor: '#071013', color: 'var(--white)' }}>
+    <section id="solutions" className="section-padding" style={{ backgroundColor: 'var(--white)', color: 'var(--button-green)' }}>
       <div className="container">
         
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -33,7 +33,7 @@ export default function AtomStory() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--accent-green)', fontFamily: 'Sora', marginBottom: '1rem' }}
+            style={{ fontSize: 'clamp(2rem, 4vw, 3.5rem)', color: 'var(--primary-green)', fontFamily: 'Sora', marginBottom: '1rem' }}
           >
             How the Affordable Toilet Ownership Model Works
           </motion.h2>
@@ -41,7 +41,7 @@ export default function AtomStory() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            style={{ fontSize: '1.125rem', color: '#8892b0', maxWidth: '600px', margin: '0 auto' }}
+            style={{ fontSize: '1.125rem', color: 'var(--button-green)', maxWidth: '600px', margin: '0 auto' }}
           >
             A simple process designed to bring safe sanitation closer to every household.
           </motion.p>
@@ -57,16 +57,17 @@ export default function AtomStory() {
                 onClick={() => setActiveStep(index)}
                 style={{ 
                   display: 'flex', gap: '1.5rem', cursor: 'pointer', 
-                  opacity: activeStep === index ? 1 : 0.4,
+                  opacity: activeStep === index ? 1 : 0.6,
                   transform: activeStep === index ? 'scale(1.02)' : 'scale(1)',
                   transition: 'all 0.3s ease',
                   padding: '1rem',
                   borderRadius: '0.5rem',
-                  backgroundColor: activeStep === index ? 'rgba(167, 217, 66, 0.05)' : 'transparent',
-                  borderLeft: activeStep === index ? '4px solid var(--accent-green)' : '4px solid transparent'
+                  backgroundColor: activeStep === index ? 'var(--button-green)' : 'transparent',
+                  borderLeft: activeStep === index ? '4px solid var(--primary-green)' : '4px solid transparent',
+                  color: activeStep === index ? 'var(--white)' : 'var(--button-green)'
                 }}
               >
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--accent-green)', fontFamily: 'Sora' }}>
+                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: activeStep === index ? 'var(--primary-green)' : 'var(--button-green)', fontFamily: 'Sora' }}>
                   {step.id}
                 </div>
                 <div>
@@ -77,7 +78,7 @@ export default function AtomStory() {
                         initial={{ opacity: 0, height: 0 }} 
                         animate={{ opacity: 1, height: 'auto' }} 
                         exit={{ opacity: 0, height: 0 }}
-                        style={{ color: '#CCD6F6', fontSize: '0.95rem', lineHeight: 1.5 }}
+                        style={{ color: 'var(--white)', fontSize: '0.95rem', lineHeight: 1.5 }}
                       >
                         {step.desc}
                       </motion.p>
@@ -89,7 +90,7 @@ export default function AtomStory() {
           </div>
 
           {/* Right Side: Animated Image */}
-          <div className="responsive-img-container" style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', backgroundColor: 'var(--primary-green)' }}>
+          <div className="responsive-img-container" style={{ position: 'relative', borderRadius: '1rem', overflow: 'hidden', boxShadow: '0 20px 40px rgba(27, 75, 53, 0.2)', backgroundColor: 'var(--primary-green)' }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeStep}
@@ -113,32 +114,31 @@ export default function AtomStory() {
                   <motion.div 
                     animate={{ opacity: [0.3, 0.8, 0.3], scale: [1, 1.02, 1] }} 
                     transition={{ duration: 2, repeat: Infinity }}
-                    style={{ position: 'absolute', inset: '10%', border: '2px solid rgba(167,217,72,0.8)', borderRadius: '1rem', boxShadow: '0 0 30px rgba(167,217,72,0.5)' }} 
+                    style={{ position: 'absolute', inset: '10%', border: '2px solid var(--primary-green)', borderRadius: '1rem' }} 
                   />
                 )}
                 
                 {activeStep === 3 && (
                   <motion.div 
                     initial={{ x: '-100%' }} animate={{ x: 0 }} transition={{ duration: 0.8 }}
-                    style={{ position: 'absolute', bottom: '10%', left: 0, padding: '1rem 2rem', backgroundColor: 'var(--primary-green)', color: 'var(--white)', borderTopRightRadius: '1rem', borderBottomRightRadius: '1rem' }}
+                    style={{ position: 'absolute', bottom: '10%', left: 0, padding: '1rem 2rem', backgroundColor: 'var(--primary-green)', color: 'var(--button-green)', borderTopRightRadius: '1rem', borderBottomRightRadius: '1rem' }}
                   >
-                    <span style={{ fontWeight: 'bold', color: 'var(--accent-green)' }}>WASH Education</span>
+                    <span style={{ fontWeight: 'bold' }}>WASH Education</span>
                   </motion.div>
                 )}
 
                 {activeStep === 4 && (
                   <motion.div 
                     animate={{ y: [-10, 10, -10] }} transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-                    style={{ position: 'absolute', top: '15%', right: '10%', padding: '1rem', backgroundColor: 'rgba(255,255,255,0.9)', borderRadius: '1rem', boxShadow: '0 10px 25px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', gap: '1rem' }}
+                    style={{ position: 'absolute', top: '15%', right: '10%', padding: '1rem', backgroundColor: 'var(--white)', borderRadius: '1rem', boxShadow: '0 10px 25px rgba(27, 75, 53,0.2)', display: 'flex', alignItems: 'center', gap: '1rem' }}
                   >
-                    <div style={{ width: '40px', height: '40px', backgroundColor: '#7CC242', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold' }}>✓</div>
-                    <div style={{ color: '#0F4D2F' }}>
+                    <div style={{ width: '40px', height: '40px', backgroundColor: 'var(--primary-green)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--white)', fontWeight: 'bold' }}>✓</div>
+                    <div style={{ color: 'var(--button-green)' }}>
                       <div style={{ fontWeight: 'bold', fontSize: '1rem' }}>Payment Verified</div>
                     </div>
                   </motion.div>
                 )}
 
-                {activeStep === 5 && <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(circle at top right, rgba(167,217,72,0.4) 0%, rgba(0,0,0,0) 60%)', mixBlendMode: 'screen' }} />}
               </motion.div>
             </AnimatePresence>
           </div>

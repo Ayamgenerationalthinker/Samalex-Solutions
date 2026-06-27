@@ -17,7 +17,7 @@ export default function TechInfographic() {
     <section className="section-padding" style={{ backgroundColor: 'var(--text-dark)', color: 'var(--white)' }}>
       <div className="container" style={{ maxWidth: '800px' }}>
         <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-          <h2 className="section-title" style={{ color: 'var(--accent-green)' }}>The Biodigester Technology</h2>
+          <h2 className="section-title" style={{ color: 'var(--primary-green)' }}>The Biodigester Technology</h2>
           <p className="section-subtitle" style={{ margin: '0 auto', color: 'rgba(255,255,255,0.7)' }}>
             A sustainable, closed-loop sanitation ecosystem.
           </p>
@@ -28,7 +28,7 @@ export default function TechInfographic() {
           <svg className="timeline-svg">
             <motion.line
               x1="2" y1="0" x2="2" y2="100%"
-              stroke="var(--accent-green)"
+              stroke="var(--primary-green)"
               strokeWidth="4"
               strokeDasharray="10 10"
               initial={{ strokeDashoffset: 1000 }}
@@ -49,7 +49,7 @@ export default function TechInfographic() {
               >
                 {/* Node */}
                 <motion.div 
-                  whileHover={{ scale: 1.1, backgroundColor: 'var(--accent-green)', color: 'var(--primary-green)' }}
+                  whileHover={{ scale: 1.1, backgroundColor: 'var(--primary-green)', color: 'var(--primary-green)' }}
                   className="timeline-node"
                 >
                   <step.icon size={32} />
@@ -57,7 +57,7 @@ export default function TechInfographic() {
 
                 {/* Content */}
                 <div className="timeline-content">
-                  <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', fontFamily: 'Sora', color: 'var(--accent-green)' }}>{step.title}</h3>
+                  <h3 style={{ fontSize: '1.5rem', marginBottom: '0.5rem', fontFamily: 'Sora', color: 'var(--primary-green)' }}>{step.title}</h3>
                   <p style={{ color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, fontSize: '1.125rem' }}>{step.desc}</p>
                 </div>
               </motion.div>

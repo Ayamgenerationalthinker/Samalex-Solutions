@@ -14,7 +14,7 @@ const partners = [
 
 export default function WhyPartner() {
   return (
-    <section id="partner" className="section-padding" style={{ backgroundColor: 'var(--bg-light)' }}>
+    <section id="partner" className="section-padding" style={{ backgroundColor: 'var(--white)' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
           <h2 className="section-title">Why NGOs & Institutions Partner With Samalex</h2>
@@ -31,12 +31,12 @@ export default function WhyPartner() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(15, 77, 47, 0.15)' }}
+              whileHover={{ y: -10, boxShadow: '0 25px 50px rgba(27, 75, 53, 0.15)' }}
               style={{
                 backgroundColor: 'var(--white)',
                 padding: '3rem 2rem',
                 borderRadius: '1.5rem',
-                border: '1px solid rgba(15, 77, 47, 0.1)',
+                border: '1px solid rgba(27, 75, 53, 0.1)',
                 transition: 'all 0.3s ease'
               }}
             >
@@ -45,13 +45,13 @@ export default function WhyPartner() {
                 borderRadius: '1rem', 
                 backgroundColor: 'var(--primary-green)', 
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                color: 'var(--accent-green)',
+                color: 'var(--primary-green)',
                 marginBottom: '1.5rem'
               }}>
                 <item.icon size={32} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontFamily: 'Sora', color: 'var(--primary-green)' }}>{item.title}</h3>
-              <p style={{ color: '#4b5563', lineHeight: 1.6 }}>{item.desc}</p>
+              <p style={{ color: 'var(--button-green)', lineHeight: 1.6 }}>{item.desc}</p>
             </motion.div>
           ))}
         </div>

@@ -47,12 +47,12 @@ export default function Solutions() {
             <motion.div
               key={index}
               variants={itemVariants}
-              whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(0,0,0,0.08)' }}
+              whileHover={{ y: -10, boxShadow: '0 20px 40px rgba(27, 75, 53,0.08)' }}
               style={{
-                backgroundColor: 'var(--bg-light)',
+                backgroundColor: 'var(--white)',
                 padding: '3rem 2rem',
                 borderRadius: '1rem',
-                border: '1px solid rgba(0,0,0,0.03)',
+                border: '1px solid rgba(27, 75, 53,0.03)',
                 transition: 'box-shadow 0.3s ease, transform 0.3s ease',
                 display: 'flex',
                 flexDirection: 'column',
@@ -62,7 +62,7 @@ export default function Solutions() {
               <div style={{ 
                 width: '64px', height: '64px', 
                 borderRadius: '1rem', 
-                backgroundColor: 'rgba(124, 194, 66, 0.15)',
+                backgroundColor: 'rgba(130, 195, 65, 0.15)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 marginBottom: '1.5rem',
                 color: 'var(--primary-green)'
@@ -70,7 +70,7 @@ export default function Solutions() {
                 <item.icon size={32} />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: 'var(--text-dark)' }}>{item.title}</h3>
-              <p style={{ color: '#6b7280', lineHeight: 1.6 }}>{item.desc}</p>
+              <p style={{ color: 'var(--button-green)', lineHeight: 1.6 }}>{item.desc}</p>
             </motion.div>
           ))}
         </motion.div>

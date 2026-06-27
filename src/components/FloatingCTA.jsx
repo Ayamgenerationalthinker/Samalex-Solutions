@@ -26,7 +26,7 @@ export default function FloatingCTA() {
           color: 'var(--white)',
           padding: '1rem 1.5rem',
           borderRadius: '50px',
-          boxShadow: '0 10px 25px rgba(15, 77, 47, 0.4)',
+          boxShadow: '0 10px 25px rgba(27, 75, 53, 0.4)',
           textDecoration: 'none',
           fontWeight: 600,
           fontFamily: 'Inter',
@@ -35,11 +35,11 @@ export default function FloatingCTA() {
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.transform = 'translateY(-5px)';
-          e.currentTarget.style.boxShadow = '0 15px 30px rgba(15, 77, 47, 0.6)';
+          e.currentTarget.style.boxShadow = '0 15px 30px rgba(27, 75, 53, 0.6)';
         }}
         onMouseLeave={(e) => {
           e.currentTarget.style.transform = 'translateY(0)';
-          e.currentTarget.style.boxShadow = '0 10px 25px rgba(15, 77, 47, 0.4)';
+          e.currentTarget.style.boxShadow = '0 10px 25px rgba(27, 75, 53, 0.4)';
         }}
       >
         <MessageSquare size={20} />

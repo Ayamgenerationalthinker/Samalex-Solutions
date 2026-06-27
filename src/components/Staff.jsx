@@ -23,8 +23,8 @@ export default function Staff() {
   return (
     <section id="team" className="section-padding" style={{ backgroundColor: 'var(--white)', position: 'relative', overflow: 'hidden' }}>
       {/* Background decorative blobs */}
-      <div style={{ position: 'absolute', top: '-5%', right: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(55, 179, 74, 0.07) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
-      <div style={{ position: 'absolute', bottom: '-5%', left: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(212, 244, 40, 0.05) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
+      <div style={{ position: 'absolute', top: '-5%', right: '-5%', width: '350px', height: '350px', background: 'radial-gradient(circle, rgba(130, 195, 65, 0.07) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
+      <div style={{ position: 'absolute', bottom: '-5%', left: '-5%', width: '300px', height: '300px', background: 'radial-gradient(circle, rgba(130, 195, 65, 0.05) 0%, transparent 70%)', borderRadius: '50%', zIndex: 0 }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Header */}
@@ -57,26 +57,26 @@ export default function Staff() {
               /* ── Placeholder card ── */
               <motion.div key={index} variants={cardVariants} className="staff-card staff-placeholder">
                 {/* Silhouette avatar */}
-                <div className="staff-img-wrapper" style={{ background: 'linear-gradient(135deg, #e8f5e0 0%, #d0eccc 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <div className="staff-img-wrapper" style={{ background: 'linear-gradient(135deg, var(--primary-green) 0%, var(--primary-green) 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <div style={{
                     width: '90px', height: '90px',
                     borderRadius: '50%',
-                    background: 'rgba(4, 57, 28, 0.10)',
+                    background: 'rgba(27, 75, 53, 0.10)',
                     display: 'flex', alignItems: 'center', justifyContent: 'center'
                   }}>
-                    <User size={44} color="rgba(4, 57, 28, 0.3)" strokeWidth={1.5} />
+                    <User size={44} color="rgba(27, 75, 53, 0.3)" strokeWidth={1.5} />
                   </div>
                 </div>
 
                 {/* Placeholder shimmer lines */}
                 <div style={{ padding: '1.75rem' }}>
-                  <div style={{ height: '14px', borderRadius: '8px', background: 'rgba(4, 57, 28, 0.08)', marginBottom: '0.6rem', width: '60%' }} />
-                  <div style={{ height: '10px', borderRadius: '8px', background: 'rgba(4, 57, 28, 0.05)', marginBottom: '1.25rem', width: '40%' }} />
+                  <div style={{ height: '14px', borderRadius: '8px', background: 'rgba(27, 75, 53, 0.08)', marginBottom: '0.6rem', width: '60%' }} />
+                  <div style={{ height: '10px', borderRadius: '8px', background: 'rgba(27, 75, 53, 0.05)', marginBottom: '1.25rem', width: '40%' }} />
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(4, 57, 28, 0.05)', width: '100%' }} />
-                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(4, 57, 28, 0.05)', width: '80%' }} />
+                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(27, 75, 53, 0.05)', width: '100%' }} />
+                    <div style={{ height: '9px', borderRadius: '6px', background: 'rgba(27, 75, 53, 0.05)', width: '80%' }} />
                   </div>
-                  <div style={{ marginTop: '1.25rem', display: 'inline-block', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px dashed rgba(4, 57, 28, 0.2)', fontSize: '0.75rem', color: 'rgba(4, 57, 28, 0.35)', fontStyle: 'italic' }}>
+                  <div style={{ marginTop: '1.25rem', display: 'inline-block', padding: '0.4rem 1rem', borderRadius: '50px', border: '1px dashed rgba(27, 75, 53, 0.2)', fontSize: '0.75rem', color: 'rgba(27, 75, 53, 0.35)', fontStyle: 'italic' }}>
                     Coming Soon
                   </div>
                 </div>

@@ -6,10 +6,10 @@ import Link from 'next/link';
 
 export default function MeetFounder() {
   return (
-    <section className="section-padding" style={{ position: 'relative', backgroundColor: 'var(--bg-light)', color: 'var(--text-dark)', overflow: 'hidden' }}>
+    <section className="section-padding" style={{ position: 'relative', backgroundColor: 'var(--white)', color: 'var(--text-dark)', overflow: 'hidden' }}>
       {/* Background ambient glows */}
-      <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(130,195,65,0.1) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
-      <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(130,195,65,0.1) 0%, rgba(0,0,0,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
+      <div style={{ position: 'absolute', top: '-10%', left: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(130,195,65,0.1) 0%, rgba(27, 75, 53,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
+      <div style={{ position: 'absolute', bottom: '-10%', right: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(130,195,65,0.1) 0%, rgba(27, 75, 53,0) 70%)', filter: 'blur(40px)', zIndex: 0 }} />
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem', alignItems: 'center' }}>
@@ -25,7 +25,7 @@ export default function MeetFounder() {
               position: 'relative', 
               borderRadius: '1.5rem', 
               overflow: 'hidden', 
-              boxShadow: '0 25px 50px rgba(0,0,0,0.4)',
+              boxShadow: '0 25px 50px rgba(27, 75, 53,0.4)',
               aspectRatio: '3/4'
             }}
           >
@@ -48,13 +48,13 @@ export default function MeetFounder() {
               padding: '2.5rem',
               borderRadius: '1.5rem',
               border: '1px solid rgba(27, 75, 53, 0.1)',
-              boxShadow: '0 10px 30px rgba(0,0,0,0.05)'
+              boxShadow: '0 10px 30px rgba(27, 75, 53,0.05)'
             }}
           >
             <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontFamily: 'Sora', color: 'var(--button-green)', marginBottom: '0.5rem' }}>Samuel Gyabah</h2>
-            <p style={{ fontSize: '1.125rem', color: '#4b5563', marginBottom: '2rem', fontWeight: 'bold', letterSpacing: '1px', textTransform: 'uppercase' }}>Founder & CEO</p>
+            <p style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '2rem', fontWeight: 'bold', letterSpacing: '1px', textTransform: 'uppercase' }}>Founder & CEO</p>
             
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.05rem', lineHeight: 1.6, color: '#374151' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', fontSize: '1.05rem', lineHeight: 1.6, color: 'var(--button-green)' }}>
               <p>
                 Samuel Gyabah knew so well from being born and bred in Pokuase how lack of decent toilet facilities has led to poor sanitation practices and escalation in diseases such as cholera, typhoid, and diarrhoea in the Ga West Municipal Assembly. He knew too well how girls missed school while menstruating due to lack of decent toilets, because he sat in class with them.
               </p>

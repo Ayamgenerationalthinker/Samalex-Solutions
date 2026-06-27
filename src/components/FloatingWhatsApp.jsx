@@ -24,7 +24,7 @@ export default function FloatingWhatsApp() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        boxShadow: '0 4px 14px rgba(0,0,0,0.3)',
+        boxShadow: '0 4px 14px rgba(27, 75, 53,0.3)',
         zIndex: 999,
         cursor: 'pointer'
       }}

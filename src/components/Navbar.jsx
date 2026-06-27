@@ -26,10 +26,10 @@ export default function Navbar() {
     <nav style={{ 
       position: 'fixed', width: '100%', zIndex: 100, 
       background: 'var(--button-green)',
-      borderBottom: '1px solid rgba(0,0,0,0.1)',
+      borderBottom: '1px solid rgba(27, 75, 53,0.1)',
       transition: 'all 0.3s ease',
       padding: scrolled ? '0.5rem 0' : '1rem 0',
-      boxShadow: scrolled ? '0 4px 20px rgba(0,0,0,0.1)' : 'none'
+      boxShadow: scrolled ? '0 4px 20px rgba(27, 75, 53,0.1)' : 'none'
     }}>
       <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <motion.div 
@@ -38,7 +38,7 @@ export default function Navbar() {
           transition={{ duration: 0.5 }}
           style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}
         >
-          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={56} height={56} style={{ height: '56px', width: '56px', borderRadius: '10px', objectFit: 'cover', background: '#fff', padding: '2px', boxShadow: '0 4px 12px rgba(0,0,0,0.15)', flexShrink: 0 }} />
+          <Image src="/images/logo.jpg" alt="Samalex Solutions Logo" width={56} height={56} style={{ height: '56px', width: '56px', borderRadius: '10px', objectFit: 'cover', background: '#fff', padding: '2px', boxShadow: '0 4px 12px rgba(27, 75, 53,0.15)', flexShrink: 0 }} />
           <span style={{ color: 'var(--white)', fontFamily: 'Sora', fontSize: 'clamp(1rem, 3vw, 1.5rem)', fontWeight: 'bold', lineHeight: 1.2 }}>
             Samalex Solutions
           </span>
@@ -54,7 +54,7 @@ export default function Navbar() {
         >
           <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
             {navLinks.map((link) => (
-              <a key={link.name} href={link.href} style={{ color: 'var(--white)', fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--accent-green)'} onMouseOut={(e) => e.target.style.color = 'var(--white)'}>
+              <a key={link.name} href={link.href} style={{ color: 'var(--white)', fontWeight: 500, fontSize: '1rem', transition: 'color 0.2s' }} onMouseOver={(e) => e.target.style.color = 'var(--primary-green)'} onMouseOut={(e) => e.target.style.color = 'var(--white)'}>
                 {link.name}
               </a>
             ))}

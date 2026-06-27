@@ -111,7 +111,7 @@ export default function Hero() {
                 </span>
               </h1>
 
-              <p style={{ fontSize: '1.125rem', marginBottom: '2.5rem', color: '#374151', lineHeight: 1.6 }}>
+              <p style={{ fontSize: '1.125rem', marginBottom: '2.5rem', color: 'var(--button-green)', lineHeight: 1.6 }}>
                 {slides[currentIndex].desc}
               </p>
 

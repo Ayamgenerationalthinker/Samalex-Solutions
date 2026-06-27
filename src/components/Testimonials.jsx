@@ -45,7 +45,7 @@ export default function Testimonials() {
               </p>
               <div>
                 <h4 style={{ fontSize: '1.125rem', color: 'var(--primary-green)', fontWeight: 600 }}>{testimonials[currentIndex].author}</h4>
-                <span style={{ color: '#6b7280', fontSize: '0.875rem' }}>{testimonials[currentIndex].location}</span>
+                <span style={{ color: 'var(--button-green)', fontSize: '0.875rem' }}>{testimonials[currentIndex].location}</span>
               </div>
             </motion.div>
           </AnimatePresence>
@@ -61,7 +61,7 @@ export default function Testimonials() {
                 width: index === currentIndex ? '24px' : '8px',
                 height: '8px',
                 borderRadius: '4px',
-                backgroundColor: index === currentIndex ? 'var(--primary-green)' : '#d1d5db',
+                backgroundColor: index === currentIndex ? 'var(--primary-green)' : 'var(--primary-green)',
                 border: 'none',
                 transition: 'all 0.3s ease',
                 cursor: 'pointer'
