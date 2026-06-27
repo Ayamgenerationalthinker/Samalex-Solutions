@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 export default function Contact() {
   return (
-    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--primary-green)' }}>
+    <section id="contact" className="section-padding" style={{ backgroundColor: 'var(--button-green)' }}>
       <div className="container">
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '4rem' }}>
           
@@ -16,30 +16,30 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="section-title" style={{ color: 'var(--button-green)' }}>Get In Touch</h2>
+            <h2 className="section-title" style={{ color: 'var(--primary-green)' }}>Get In Touch</h2>
             <p style={{ color: 'var(--white)', fontSize: '1.125rem', marginBottom: '3rem', lineHeight: 1.6 }}>
               Ready to transform sanitation in your community? Contact us today to discuss partnerships, projects, or our ATOM program.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--white)' }}><MapPin size={24} /></div>
+                <div style={{ color: 'var(--primary-green)' }}><MapPin size={24} /></div>
                 <div>
-                  <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '0.25rem' }}>Location</h4>
+                  <h4 style={{ fontSize: '1.125rem', color: 'var(--primary-green)', marginBottom: '0.25rem' }}>Location</h4>
                   <p style={{ color: 'var(--white)' }}>Presby Road, Pokuase, Ga North, Ghana</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--white)' }}><Phone size={24} /></div>
+                <div style={{ color: 'var(--primary-green)' }}><Phone size={24} /></div>
                 <div>
-                  <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '0.25rem' }}>Phone</h4>
+                  <h4 style={{ fontSize: '1.125rem', color: 'var(--primary-green)', marginBottom: '0.25rem' }}>Phone</h4>
                   <p style={{ color: 'var(--white)' }}>0557952992</p>
                 </div>
               </div>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-                <div style={{ color: 'var(--white)' }}><Mail size={24} /></div>
+                <div style={{ color: 'var(--primary-green)' }}><Mail size={24} /></div>
                 <div>
-                  <h4 style={{ fontSize: '1.125rem', color: 'var(--button-green)', marginBottom: '0.25rem' }}>Email</h4>
+                  <h4 style={{ fontSize: '1.125rem', color: 'var(--primary-green)', marginBottom: '0.25rem' }}>Email</h4>
                   <p style={{ color: 'var(--white)' }}>samalexsolution24@gmail.com</p>
                 </div>
               </div>
